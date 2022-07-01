@@ -1,23 +1,23 @@
-<p class="fb ct">最新消息</p>
+<h1>最新消息</h1>
 <div id="list">
 <p class="ct" style="color:blue">*點擊標題觀看詳細資訊</p>
 <table class="all">
   <tr class="tt ct">
     <td>標題</td>
   </tr>
-  <tr class="Ct_C">
-    <td style="cursor:pointer" onclick="javascript:$('#n1').toggle();$('#list').toggle()">情人節特惠活動</td>
+  <tr class="ct_c">
+    <td  onclick="javascript:$('#n1').toggle();$('#list').toggle()">情人節特惠活動</td>
   </tr>
   <tr class="pp">
-    <td style="cursor:pointer" onclick="javascript:$('#n2').toggle();$('#list').toggle()">年終特賣會開跑了</td>
+    <td onclick="javascript:$('#n2').toggle();$('#list').toggle()">年終特賣會開跑了</td>
   </tr>
 </table>
 </div>
 <div id="n1" style="display:none">
 <table class="all">
   <tr>
-    <td class="ct Ct_C ">標題</td>
-    <td class="Ct_C ">情人節特惠活動</td>
+    <td class="ct ct_c">標題</td>
+    <td class="ct_c">情人節特惠活動</td>
   </tr>
   <tr>
     <td class="tt ct">內容</td>
@@ -29,8 +29,8 @@
 <div id="n2" style="display:none">
 <table class="all">
   <tr>
-    <td class="ct Ct_C">標題</td>
-    <td class="Ct_C">年終特賣會開跑了</td>
+    <td class="ct ct_c">標題</td>
+    <td class="ct_c">年終特賣會開跑了</td>
   </tr>
   <tr>
     <td class="tt ct">內容</td>

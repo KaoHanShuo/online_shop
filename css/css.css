@@ -88,6 +88,7 @@ body
 .pp td
 {
 	background:#0dcaf0;/* 外下*/
+    cursor: pointer;
 }
 input[type=text],input[type=password],input[type=submit],button,.button,input[type=reset],input[type=button],select，textarea,input[type=number]
 {
@@ -120,14 +121,14 @@ div.ww:hover > div.s
 	font-size:12px;
 }
 
-.Ct_C {
+.ct_c {
     background: linear-gradient(to bottom,#feb0bd 3%,#fff 95%);
     background: -webkit-linear-gradient(top,#feb0bd 3%,#fff 95%);
     background-color: #feb0bd;
 }
 
-.Ct_A {
-    background: linear-gradient(to bottom,#d11433 3%,#fff 95%);
-    background: -webkit-linear-gradient(top,#feb0bd 3%,#fff 95%);
-    background-color: #feb0bd;
+.ct_a {
+    background:#0dcaf0;
+    border-width:2px;
+    border-color:rgb(255, 255, 255);
 }

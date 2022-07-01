@@ -28,15 +28,19 @@
 </head>
 
 <body>
+    <!--回首頁 | 最新消息 | 購物流程 | 購物車 | 會員登入 | 管理登入 -->
+    <!-- 上半部 -->
     <div class="container-fluid">
         <div class="row py-2 px-lg-5">
             <div class="col d-flex justify-content-end px-lg-5 gy-1">
-                <a class="text-dark px-2" href="">
+                <a class="text-dark px-2" href="?do=login">
                     <i class=" bi bi-person-fill">會員登入</i>
-                    <!--回首頁 | 最新消息 | 購物流程 | 購物車 | 會員登入 | 管理登入 -->
                 </a>
                 <a class="text-dark px-2" href="">
                     <i class="bi bi-cart-check">購物車</i>
+                </a>
+                <a class="text-dark px-2" href="">
+                    <i class=" bi bi bi-person-workspace">管理員登入</i>
                 </a>
             </div>
         </div>
@@ -90,7 +94,7 @@
 
     </nav>
 
-    <!-- Navbar Start -->
+    <!-- Navbar Start --><!-- 左邊商品及右邊欄位 -->
     <div><h1></div>
     <div class="container-fluid mb-5">
         <div class="row border-top px-xl-5">
@@ -134,12 +138,12 @@
 
                     <?php
                         $do = $_GET['do'] ?? 'main';
-                        $file = '' . $do . ".php";
+                        $file = 'front/' . $do . ".php";
                         if (file_exists($file)) {
                                 include $file;
                         } else {
                                 // echo "檔案不存在";
-                                include "main.php";
+                                include "front/main.php";
                         }
                     ?>
                    
@@ -149,8 +153,8 @@
     </div>
     <!-- Navbar End -->
 
-    <!-- Footer Start -->
-    <div class="container-fluid  bg-secondary  text-dark mt-5 pt-5">
+    <!-- Footer Start --><!-- 底部資訊 -->
+    <div class="container-fluid bg-grey text-dark mt-5 pt-5">
         <div class="row px-xl-5 ">
             <div class="col-lg-2"></div>
             <div class="col-lg-8 col-md-12 mb-5 pr-3 pr-xl-5 text-center">
