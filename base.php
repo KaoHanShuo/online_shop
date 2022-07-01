@@ -90,8 +90,6 @@ $pdo->exec($sql);
 
 function insert($table,$array){
  global $pdo;
-
-
  $sql="INSERT into $table(`" . implode('`,`',array_keys($array)) . "`) 
                     value('" . implode("','",$array) ."')";
 
@@ -133,4 +131,5 @@ function dd($array){
     print_r($array);
     echo "</pre>";
 }
+
 ?>

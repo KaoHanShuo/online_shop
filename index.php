@@ -1,3 +1,4 @@
+<?php include_once "base.php";?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,9 +11,8 @@
 
 
 
-
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="css/bootstrap.css" rel="stylesheet" >
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
@@ -24,6 +24,7 @@
         }
     </style>
 
+    <link href="./css/css.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -50,18 +51,18 @@
     </div>
 
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-light bg-danger">
         <div class="container-fluid">
             <div class="container-xxl">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                     <li class="nav-item">
-                        <a class="nav-link text-light" aria-current="page" href="#">回首頁</a>
+                        <a class="nav-link text-light" aria-current="page" href="?">回首頁</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">關於我們</a>
+                        <a class="nav-link text-light" href="?do=look">關於我們</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">最新消息</a>
+                        <a class="nav-link text-light" href="?do=news">最新消息</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -83,21 +84,22 @@
             </div>
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <button class="" type="submit">Search</button>
             </form>
         </div>
 
     </nav>
 
     <!-- Navbar Start -->
+    <div><h1></div>
     <div class="container-fluid mb-5">
         <div class="row border-top px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
-                <a class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100" aria-expanded="false" data-bs-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
+                <a class="btn shadow-none d-flex align-items-center justify-content-between bg-danger text-white w-100" aria-expanded="false" data-bs-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
                     <h6 class="m-0">全部商品</h6>
                     <i class="fa fa-angle-down text-dark"></i>
                 </a>
-                <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0" id="navbar-vertical">
+                <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 bg-pink" id="navbar-vertical">
                     <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link" data-bs-toggle="dropdown">衣服 <i class="fa fa-angle-down float-right mt-1"></i></a>
@@ -125,42 +127,22 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="container-fluid">
-                        <h3 class="text-dark">商品列表</h3>
+                        <h3 class="text-dark"></h3>
                     </div>
                 </nav>
                 <div id="header-carousel" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active" style="height: 410px;">
-                            <img class="img-fluid" src="img/carousel-1.jpg" alt="Image">
-                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                                <div class="p-3" style="max-width: 700px;">
-                                    <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
-                                    <h3 class="display-4 text-white font-weight-semi-bold mb-4">Fashionable Dress</h3>
-                                    <a href="" class="btn btn-light py-2 px-3">Shop Now</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item" style="height: 410px;">
-                            <img class="img-fluid" src="img/carousel-2.jpg" alt="Image">
-                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                                <div class="p-3" style="max-width: 700px;">
-                                    <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
-                                    <h3 class="display-4 text-white font-weight-semi-bold mb-4">Reasonable Price</h3>
-                                    <a href="" class="btn btn-light py-2 px-3">Shop Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
-                        <div class="btn btn-dark" style="width: 45px; height: 45px;">
-                            <span class="carousel-control-prev-icon mb-n2"></span>
-                        </div>
-                    </a>
-                    <a class="carousel-control-next" href="#header-carousel" data-slide="next">
-                        <div class="btn btn-dark" style="width: 45px; height: 45px;">
-                            <span class="carousel-control-next-icon mb-n2"></span>
-                        </div>
-                    </a>
+
+                    <?php
+                        $do = $_GET['do'] ?? 'main';
+                        $file = '' . $do . ".php";
+                        if (file_exists($file)) {
+                                include $file;
+                        } else {
+                                // echo "檔案不存在";
+                                include "main.php";
+                        }
+                    ?>
+                   
                 </div>
             </div>
         </div>
@@ -168,7 +150,7 @@
     <!-- Navbar End -->
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-secondary  text-dark mt-5 pt-5">
+    <div class="container-fluid  bg-secondary  text-dark mt-5 pt-5">
         <div class="row px-xl-5 ">
             <div class="col-lg-2"></div>
             <div class="col-lg-8 col-md-12 mb-5 pr-3 pr-xl-5 text-center">
@@ -197,14 +179,6 @@
 
 
     <i class="bi bi-cart-check" style="font-size: 60px"></i>
-
-
-
-
-
-
-
-
 
 
 
