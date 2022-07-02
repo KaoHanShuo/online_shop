@@ -1,3 +1,4 @@
+<!-- 主頁 -->
 <?php include_once "base.php";?>
 <!DOCTYPE html>
 <html lang="en">
@@ -134,8 +135,8 @@
                         <h3 class="text-dark"></h3>
                     </div>
                 </nav>
-                <div id="header-carousel" class="carousel slide" data-ride="carousel">
-
+                <div style="width:90%;"  id="header-carousel" class="carousel slide" data-ride="carousel">
+                <!-- 檔案引入 -->
                     <?php
                         $do = $_GET['do'] ?? 'main';
                         $file = 'front/' . $do . ".php";
@@ -146,7 +147,7 @@
                                 include "front/main.php";
                         }
                     ?>
-                   
+                <!-- 檔案引入 -->
                 </div>
             </div>
         </div>
@@ -154,7 +155,7 @@
     <!-- Navbar End -->
 
     <!-- Footer Start --><!-- 底部資訊 -->
-    <div class="container-fluid bg-grey text-dark mt-5 pt-5">
+    <div class="container-fluid bg-grey text-dark mt-5 pt-5 ">
         <div class="row px-xl-5 ">
             <div class="col-lg-2"></div>
             <div class="col-lg-8 col-md-12 mb-5 pr-3 pr-xl-5 text-center">

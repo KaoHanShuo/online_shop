@@ -7789,16 +7789,6 @@ textarea.form-control-lg {
   background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) !important;
 }
 
-.bg-pink { /*自定義粉色*/
-  --bs-bg-opacity: 1;
-  background-color: rgba(254,176,189, var(--bs-bg-opacity)) !important;
-}
-
-.bg-grey {  /*自定義灰底*/
-  --bs-bg-opacity: 1;
-  background-color: rgba(213,216,229, var(--bs-bg-opacity)) !important;
-}
-
 .bg-body {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-body-bg-rgb), var(--bs-bg-opacity)) !important;
@@ -11229,4 +11219,15 @@ textarea.form-control-lg {
   }
 }
 
+/*自定義區塊*****************/
+
+.bg-pink { /*自定義粉色*/
+  --bs-bg-opacity: 1;
+  background-color: rgba(254,176,189, var(--bs-bg-opacity)) !important;
+}
+
+.bg-grey {  /*自定義灰底*/
+  --bs-bg-opacity: 1;
+  background-color: rgba(213,216,229, var(--bs-bg-opacity)) !important;
+}
 /*# sourceMappingURL=bootstrap.css.map */

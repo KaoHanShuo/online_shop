@@ -132,3 +132,12 @@ div.ww:hover > div.s
     border-width:2px;
     border-color:rgb(255, 255, 255);
 }
+
+
+.bottom_foot{
+    margin-top: 1000px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+              /* Footer height */
+}
