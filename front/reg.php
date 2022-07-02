@@ -33,7 +33,7 @@
 
 <div class="ct">
    <button onclick="reg()">註冊</button>
-   <button onclick="reset()">reset</button>
+   
 </div> 
 
 
