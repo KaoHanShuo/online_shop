@@ -37,10 +37,10 @@
                 <a class="text-dark px-2" href="?do=login">
                     <i class=" bi bi-person-fill">會員登入</i>
                 </a>
-                <a class="text-dark px-2" href="">
+                <a class="text-dark px-2" href="?do=buycart">
                     <i class="bi bi-cart-check">購物車</i>
                 </a>
-                <a class="text-dark px-2" href="">
+                <a class="text-dark px-2" href="?do=admin">
                     <i class=" bi bi bi-person-workspace">管理員登入</i>
                 </a>
             </div>

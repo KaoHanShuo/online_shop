@@ -1,4 +1,5 @@
 <!-- 會員登入 -->
+<?php include_once "base.php";?>
 <h1>會員登入</h1>
 
 <table class='all'>
@@ -13,20 +14,12 @@
     <tr>
         <td class="ct ct_a">驗證碼</td>
         <td class="pp ct_a">
-            
             <input type="text" name="ans" id="ans">
-            <p><img id="imgcode" src="./back/captcha.php" onclick="refresh_code()"/></p>
-
-            <?php
-                //echo $_SESSION['ans'];
-            ?>
+            <p><img id="imgcode" src="./api/create_captcha.php" onclick="refresh_code()"/></p>
         </td>
     </tr>
+    
 </table>
-
-
-<!-- include "./back/captcha.php" -->
-
 
 <div class="ct">
     <a href="?do=reg"><button>註冊</button></a>
@@ -40,18 +33,30 @@
 </div>  -->
 
 <script>
-    function refresh_code(){ 
-        document.getElementById("imgcode").src="./back/captcha.php"; 
+    function refresh_code(){ //驗證碼刷新
+        document.getElementById("imgcode").src="./api/create_captcha.php"; 
     } 
 
     function login(){
-      $.post("api/check_captcha.php",{ans:$("#ans").val()},function(check){
-         if(parseInt(check)){
-            alert("驗證碼對了");
-         }else{
-            alert("驗證碼不對");
-            //alert("對不起，您輸入的驗證碼有誤請您重新輸入");
-         }
-      })
-   }
+        let data={
+        acc:$("#acc").val(),
+        pw:$("#pw").val(),
+        ans:$('#ans').val(),
+        }
+
+        $.post("./api/check_captcha.php",{ans:data.ans},function(check){
+            if(parseInt(check)){
+                //alert("驗證碼正確");
+            $.post("./api/check_pw.php",{table:'user', acc:data.acc, pw:data.pw},function(res){
+                if(parseInt(res)){
+                  location.href="./index.php";//假設登入成功跳轉
+                }else{
+                    alert("帳號或密碼錯誤");
+                }
+            })
+        }else{
+            alert("驗證碼輸入錯誤");
+        }
+        })
+    }
 </script>

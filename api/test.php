@@ -1,6 +1,5 @@
-<!-- 後臺管理 -->
 <?php include_once "base.php";
 
-phpinfo();
+echo 1;
 
 ?>

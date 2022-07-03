@@ -15,13 +15,13 @@
       $width 圖片寬
       $high 圖片高
     */
-    imgcode(5,120,30);
+    imgcode(2,120,30);
 
     //imgcode的function
     function imgcode($nums,$width,$high) {
        
         //去除了數字0和1 字母小寫O和L，為了避免辨識不清楚
-        $str = "23456789ABCDEFGHIJKLMOPQRSTUBWXYZ";
+        $str = "23456789";//為方便測試改簡單
         //$str = "23456789abcdefghijkmnpqrstuvwxyzABCDEFGHIJKLMOPQRSTUBWXYZ";
         $code = '';
         for ($i = 0; $i < $nums; $i++) {
