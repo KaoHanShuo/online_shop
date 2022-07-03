@@ -39,10 +39,6 @@ body
 	color:#65350A;
 }
 
-#testa
-{
-
-}
 
 #testb
 {
@@ -89,12 +85,20 @@ body
 	min-width:50px;
 	padding:10px;
 }
-.tt
+.middle
 {
+	margin-left:auto; 
+	margin-right:auto;
+}
+.tt
+{	
 	background:#0dcaf0;/* 內左*/
 }
 .tt td
-{
+{	
+	
+    border-color:rgb(255, 255, 255);
+	border-width: 2px;
 	background:#0dcaf0;/* 外上*/
 }
 .pp
@@ -103,6 +107,8 @@ body
 }
 .pp td
 {
+	border-color:rgb(255, 255, 255);
+	border-width: 2px;
 	background:#0dcaf0;/* 外下*/
     cursor: pointer;
 }

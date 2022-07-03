@@ -96,7 +96,7 @@
                 </div> -->
               
                
-                <div style="width:100%; border:5px  #FFAC55 solid;"  id="header-carousel" class="carousel slide" data-ride="carousel">
+                <div style="width:80%; border:5px #FFAC55 solid;"  id="header-carousel" class="carousel slide middle" data-ride="carousel">
                 <!-- 檔案引入 -->
                     <?php
                         $do = $_GET['do'] ?? 'main';
