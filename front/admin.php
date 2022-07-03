@@ -41,7 +41,7 @@
             //alert("驗證碼正確");
             $.post("./api/check_pw.php", {table:'admin',acc:data.acc, pw:data.pw},function(res){
                if (parseInt(res)) {
-                  location.href = "./back/admin.php";//假設登入成功跳轉
+                  location.href = "./back.php";//假設登入成功跳轉
                }else{
                   alert("帳號或密碼錯誤");
                }

@@ -29,9 +29,6 @@
 
 <script>
 
-    //$("input[name='permit[]']").prop("checked", true);
-
-
     function reset(){
         $("#acc,#pw").val("");
         $("input[type='checkbox']").prop('checked',false);
@@ -42,12 +39,11 @@
         $("input[type='checkbox']:checked").each((idx,dom)=>{
             permit.push($(dom).val());
         })
-        $.post("../api/save_admin.php",{acc:$("#acc").val(), pw:$("#pw").val(), permit},function(){
+        $.post("./api/save_admin.php",{acc:$("#acc").val(), pw:$("#pw").val(), permit},function(){
             
-            location.href="";
-            //location.href="?do=admin";
+            //location.href="";
+            location.href="?do=admin";
         })
     }
 </script> 
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js">//為方便測試先匯入</script>  

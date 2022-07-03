@@ -38,6 +38,22 @@ body
 	margin:10px auto 10px auto;
 	color:#65350A;
 }
+
+#testa
+{
+
+}
+
+#testb
+{
+	display:inline-block;
+	padding:5px 10px 5px 10px;
+	text-decoration:none;
+	background:#0e0d0d;
+	margin:10px 10px 10px 10px;
+	color:#65350A;
+}
+
 .ct
 {
 	text-align:center;
