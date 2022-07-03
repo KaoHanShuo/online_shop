@@ -49,7 +49,6 @@
          }
       })
    }
-
    //註冊帳號
    function reg(){
       //取值
@@ -61,7 +60,6 @@
          tel:$("#tel").val(),
          email:$("#email").val(),
       }
-
       $.post("api/check_acc.php",{acc:data.acc},function(check){
          if(parseInt(check) || data.acc=='admin'){ //if(check>0)
             alert("帳號已存在");
@@ -74,3 +72,4 @@
       })
    }
 </script> 
+

@@ -135,7 +135,7 @@
                         <h3 class="text-dark"></h3>
                     </div>
                 </nav>
-                <div style="width:90%;"  id="header-carousel" class="carousel slide" data-ride="carousel">
+                <div style="width:100%; border:5px  #FFAC55 solid;"  id="header-carousel" class="carousel slide" data-ride="carousel">
                 <!-- 檔案引入 -->
                     <?php
                         $do = $_GET['do'] ?? 'main';

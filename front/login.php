@@ -45,11 +45,11 @@
     } 
 
     function login(){
-      $.post("api/check_ans.php",{ans:$("#ans").val()},function(check){
+      $.post("api/check_captcha.php",{ans:$("#ans").val()},function(check){
          if(parseInt(check)){
-            console.log(check+"答對了");
+            alert("驗證碼對了");
          }else{
-            console.log(check+"不對");
+            alert("驗證碼不對");
             //alert("對不起，您輸入的驗證碼有誤請您重新輸入");
          }
       })
