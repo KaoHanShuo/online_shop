@@ -22,7 +22,7 @@
 </table>
 
 <div class="ct">
-    <a href="?do=reg"><button>註冊</button></a>
+    <a href="?do=reg"><button>註冊</button></a>|
     <button onclick="login()">確認</button>
 </div> 
 
@@ -37,17 +37,18 @@
         document.getElementById("imgcode").src="./api/create_captcha.php"; 
     } 
 
-    function login(){
+    function login(){ //登入
+        //取值
         let data={
         acc:$("#acc").val(),
         pw:$("#pw").val(),
         ans:$('#ans').val(),
         }
 
-        $.post("./api/check_captcha.php",{ans:data.ans},function(check){
+        $.post("./api/check_captcha.php",{ans:data.ans},function(check){ //  ./api/check_captcha.php
             if(parseInt(check)){
                 //alert("驗證碼正確");
-            $.post("./api/check_pw.php",{table:'user', acc:data.acc, pw:data.pw},function(res){
+            $.post("./api/check_pw.php",{table:'user', acc:data.acc, pw:data.pw},function(res){ //  ./api/check_pw.php
                 if(parseInt(res)){
                   location.href="./index.php";//假設登入成功跳轉
                 }else{

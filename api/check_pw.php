@@ -1,5 +1,6 @@
-<?php
-include_once "../base.php";
+<?php include_once "../base.php";
+//檢測帳號密碼正確
+//from front/login.php
 
 //$check = math('user','count','*',['acc'=>$_POST['acc'],'pw'=>$_POST['pw']]);
 $table = $_POST['table'];

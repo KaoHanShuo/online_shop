@@ -10,20 +10,22 @@
 
     <title>online_shop</title>
 
-
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./js/js.js"></script>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet" >
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  
 
-    <style type="text/css">
+    <!-- <style type="text/css">
         .bg-secondary {
             background-color: #EDF1FF;
         }
-    </style>
+    </style> -->
 
     <link href="./css/css.css" rel="stylesheet" type="text/css">
 </head>
@@ -182,9 +184,7 @@
 
     <i class="bi bi-cart-check" style="font-size: 60px"></i>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
 </body>
 
 </html>

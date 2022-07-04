@@ -21,9 +21,6 @@ function find($table,$id){
     return $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
 }
 
-
-
-
 //符合條件的資料筆數
 function rows($table,$array){
     global $pdo;

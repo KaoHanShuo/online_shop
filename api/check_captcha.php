@@ -1,4 +1,7 @@
-<?php 
+<?php
+//檢測驗證碼
+//from front/login.php
+
     if(!isset($_SESSION)){//判斷session是否已啟動
         session_start();
     }

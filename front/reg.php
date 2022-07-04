@@ -41,7 +41,7 @@
 <script>
    // 檢測帳號
    function checkAcc(){
-      $.post("api/check_acc.php",{acc:$("#acc").val()},function(check){
+      $.post("./api/check_acc.php",{acc:$("#acc").val()},function(check){ //  ./api/check_acc.php
          if(parseInt(check) || $("#acc").val()=='admin'){ //if(check>0)
             alert("帳號已存在");
          }else{
@@ -60,11 +60,11 @@
          tel:$("#tel").val(),
          email:$("#email").val(),
       }
-      $.post("api/check_acc.php",{acc:data.acc},function(check){
+      $.post("./api/check_acc.php",{acc:data.acc},function(check){ //  ./api/check_acc.php
          if(parseInt(check) || data.acc=='admin'){ //if(check>0)
             alert("帳號已存在");
          }else{
-            $.post("api/reg.php",data,function(){
+            $.post("./api/reg.php",data,function(){ //  ./api/reg.php
                alert("註冊成功");
                location.href='?do=login';
             })

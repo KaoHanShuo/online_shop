@@ -1,9 +1,11 @@
-
+<!-- 帳號管理 -->
+<?php  
+    $rows = all('admin');//取所有admin內資料
+?>
 
 <div class="ct">
-    <button onclick="location.href='?do=add_admin'">新增管理員</button>
+    <button onclick="location.href='?do=add_admin'">新增管理員</button>    
 </div>
-
 <table class="all ct">
     <tr class="tt">
         <td>帳號</td>
@@ -11,8 +13,6 @@
         <td>管理</td>
     </tr>
     <?php
-        //$rows=$Admin->all();
-        $rows = all('admin');
         foreach($rows as $row){
     ?>
 
@@ -22,12 +22,12 @@
         <td>
             <?php
                 if($row['acc']=='admin'){
-                echo "最高權限";
+                echo "主管理員";
                 }else{
             ?>
 
-            <button onclick="location.href='?do=edit_admin&id=<?=$row['id'];?>'">修改</button>
-            <button onclick="del('admin',<?=$row['id'];?>)">刪除</button>
+            <button onclick="location.href='?do=edit_admin&id=<?=$row['id'];?>'">edit</button>
+            <button onclick="del('admin',<?=$row['id'];?>)">delete</button>
 
             <?php    
                 }

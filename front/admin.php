@@ -29,17 +29,17 @@
       document.getElementById("imgcode").src="./api/create_captcha.php"; 
    } 
 
-   function login() {
+   function login(){ //帳號登入
       let data={
       acc:$("#acc").val(),
       pw:$("#pw").val(),
       ans:$('#ans').val(),
       }
 
-      $.post("./api/check_captcha.php", {ans:data.ans},function(check){
+      $.post("./api/check_captcha.php", {ans:data.ans},function(check){ //  ./api/check_captcha.php
          if (parseInt(check)) {
             //alert("驗證碼正確");
-            $.post("./api/check_pw.php", {table:'admin',acc:data.acc, pw:data.pw},function(res){
+            $.post("./api/check_pw.php", {table:'admin',acc:data.acc, pw:data.pw},function(res){ //  ./api/check_pw.php
                if (parseInt(res)) {
                   location.href = "./back.php";//假設登入成功跳轉
                }else{

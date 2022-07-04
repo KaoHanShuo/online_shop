@@ -1,6 +1,7 @@
 <?php include_once "../base.php";
+//檢測帳號重複
+//from front/reg.php
 
-//$check = math('user','count','*',['acc'=>$_POST['acc']]);
 $check = rows('user',['acc'=>$_POST['acc']]);
 if($check){
    echo 1;

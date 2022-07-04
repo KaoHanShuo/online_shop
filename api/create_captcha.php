@@ -1,4 +1,6 @@
 <?php
+    //創建驗證碼圖形
+    
     if(!isset($_SESSION)){//檢查SESSION是否啟動
         session_start(); 
     }
