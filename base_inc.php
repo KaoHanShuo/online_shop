@@ -1,11 +1,10 @@
 <?php
-/***  修改成物件模型 ***/
 $dsn="mysql:host=localhost;charset=utf8;dbname=business";
 $pdo=new PDO($dsn,'root','');
 
 session_start();
 
-//取得符合條件的一筆資料
+#取得符合條件的一筆資料
 function find($table,$id){
     global $pdo;
     $sql="SELECT * FROM `$table` WHERE ";
@@ -21,7 +20,7 @@ function find($table,$id){
     return $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
 }
 
-//符合條件的資料筆數
+#符合條件的資料筆數
 function rows($table,$array){
     global $pdo;
     $sql="SELECT count(*) FROM `$table` WHERE ";
@@ -32,7 +31,7 @@ function rows($table,$array){
     return $pdo->query($sql)->fetchColumn();
 }
 
-//取出指定資料表的所有資料
+#取出指定資料表的所有資料
 function all($table,...$arg){
     global $pdo;
     $sql="SELECT * FROM `$table` ";
@@ -78,11 +77,10 @@ function math($table,$math,$col,...$arg){
             $sql .=" where ".implode(" AND ",$tmp)." ".$arg[1];
         break;
     }    
-    //echo $sql;
     return $pdo->query($sql)->fetchColumn();
 }
 
-//更新資料
+#更新資料
 function update($table,$column,$where){
     global $pdo;
     $sql_set='';
@@ -101,18 +99,17 @@ function update($table,$column,$where){
     $pdo->exec($sql);
 }
 
-//新增資料
+#新增資料
 function insert($table,$array){
     global $pdo;
     $sql="INSERT into $table(`" . implode('`,`',array_keys($array)) . "`) 
                     value('" . implode("','",$array) ."')";
-    //echo $sql."<br>";
     return $pdo->exec($sql);
 }
 
 // public function save($array){
 //     if(isset($array['id'])){
-//         //update
+//         #update
 //         foreach($array as $key=>$value){
 //             if($key!='id'){
 
@@ -121,14 +118,14 @@ function insert($table,$array){
 //         }
 //         $sql="UPDATE $this->table SET ".implode(",",$tmp)." WHERE `id`='{$array['id']}'";
 //     }else{
-//         //insert
+//         #insert
 //         $sql="INSERT INTO $this->table (`".implode("`,`",array_keys($array))."`) VALUES('".implode("','",$array)."')";
 //     }
 //     return $this->pdo->exec($sql);
 // }
 
 
-//刪除資料
+#刪除資料
 function del($table,$id){
     global $pdo;
     $sql="DELETE FROM `$table` WHERE ";
@@ -144,18 +141,18 @@ function del($table,$id){
     return $pdo->exec($sql);
 }
 
-//導向
+#導向
 function to($url){
     header("location:$url");
 }
 
-//通用查詢函式
+#通用查詢函式
 function q($sql){
     global $pdo;
     return $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 }
 
-//direct dump
+#direct dump
 function dd($array){
     echo "<pre>";
     print_r($array);

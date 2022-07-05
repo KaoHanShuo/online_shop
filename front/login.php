@@ -1,5 +1,5 @@
 <!-- 會員登入 -->
-<?php include_once "base.php";?>
+<?php include_once "base_inc.php";?>
 <h1>會員登入</h1>
 
 <table class='all'>

@@ -1,4 +1,4 @@
-<?php include_once "base.php";
+<?php include_once "base_inc.php";
 
 echo 1;
 

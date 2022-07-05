@@ -1,5 +1,5 @@
 <!-- 主頁 -->
-<?php include_once "base.php";?>
+<?php include_once "base_inc.php";?>
 <!DOCTYPE html>
 <html lang="en">
 

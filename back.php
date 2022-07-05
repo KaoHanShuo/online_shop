@@ -1,5 +1,5 @@
 <!-- 主頁 -->
-<?php include_once "base.php";?>
+<?php include_once "base_inc.php";?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,9 +53,12 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-danger">
         <div class="container-fluid">
             <div class="">
-                <ul class="navbar-nav ">
+                <ul class="navbar-nav ct">
                     <li class="nav-item">
                         <a id="testb" class="nav-link text-light" href="?do=admin" style="margin-left: 100px;">管理權限設置</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="testb" class="nav-link text-light" href="?do=user">會員管理</a>
                     </li>
                     <li class="nav-item">
                         <a id="testb" class="nav-link text-light" href="?do=th">商品分類與管理</a>
@@ -63,9 +66,7 @@
                     <li class="nav-item">
                         <a id="testb" class="nav-link text-light" href="?do=order">訂單管理</a>
                     </li>
-                    <li class="nav-item">
-                        <a id="testb" class="nav-link text-light" href="?do=men">會員管理</a>
-                    </li>
+                    
                     <li class="nav-item">
                         <a id="testb" class="nav-link text-light" href="?">最新消息管理</a>
                     </li>

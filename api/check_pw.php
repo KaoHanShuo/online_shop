@@ -1,4 +1,4 @@
-<?php include_once "../base.php";
+<?php include_once "../base_inc.php";
 //檢測帳號密碼正確
 //from front/login.php
 

@@ -1,4 +1,4 @@
-<?php include_once "../base.php";
+<?php include_once "../base_inc.php";
 //匯入帳戶資料
 //come from front/reg.php
 

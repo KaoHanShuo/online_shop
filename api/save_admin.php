@@ -1,4 +1,4 @@
-<?php include_once "../base.php";
+<?php include_once "../base_inc.php";
 //匯入或更新管理員帳號
 //from back/add_admin.php 
 //from back/edit_admin.php 
