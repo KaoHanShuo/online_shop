@@ -18,11 +18,11 @@
    foreach($rows as $row){
    ?>
    <tr class="pp">
-      <td><?=$row['no'];?></td>
+      <td><?=$row['number'];?></td>
       <td><?=$row['total'];?></td>
       <td><?=$row['acc'];?></td>
       <td><?=$row['name'];?></td>
-      <td><?=$row['date'];?></td> <!--date("Y-m-d",strtotime($row['date']))-->
+      <td><?=$row['date'];?></td>
       <td>
       <button onclick="del('item_order',<?=$row['id'];?>)">刪除</button>
       </td>

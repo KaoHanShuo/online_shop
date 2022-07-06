@@ -13,7 +13,7 @@
     <!-- JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="./js/js.js"></script>
+    <script src="js/js.js"></script>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet" >
@@ -61,7 +61,7 @@
                         <a id="testb" class="nav-link text-light" href="?do=user">會員管理</a>
                     </li>
                     <li class="nav-item">
-                        <a id="testb" class="nav-link text-light" href="?do=th">商品分類與管理</a>
+                        <a id="testb" class="nav-link text-light" href="?do=category">商品分類與管理</a>
                     </li>
                     <li class="nav-item">
                         <a id="testb" class="nav-link text-light" href="?do=order">訂單管理</a>
@@ -120,9 +120,9 @@
             <div class="col-lg-2"></div>
             <div class="col-lg-8 col-md-12 mb-5 pr-3 pr-xl-5 text-center">
                 <a class="text-dark" href="#top">返回頂部</a>
-                <p class="mb-2 pt-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Street, New York, USA</p>
-                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@example.com</p>
-                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+012 345 67890</p>
+                <p class="mb-2 pt-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>地址</p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>郵件</p>
+                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>聯絡電話</p>
             </div>
             <div class="col-lg-2"></div>
         </div>
@@ -130,8 +130,8 @@
             <div class="col-lg-2"></div>
             <div class="col-lg-8">
                 <p class="mb-md-0 text-center  text-dark">
-                    &copy; <a class="text-dark font-weight-semi-bold" href="#">Your Site Name</a>. All Rights Reserved. Designed by
-                    <a class="text-dark font-weight-semi-bold" href="https://htmlcodex.com">HTML Codex</a><br>
+                    <a class="text-dark font-weight-semi-bold" href="#">
+                    <a class="text-dark font-weight-semi-bold" href="">版權所有</a><br>
                 </p>
             </div>
             <div class="col-lg-2"></div>
@@ -140,7 +140,7 @@
     <!-- Footer End -->
 
 
-    <i class="bi bi-cart-check" style="font-size: 60px"></i>
+    <!-- <i class="bi bi-cart-check" style="font-size: 60px"></i> -->
 
 
 </body>
