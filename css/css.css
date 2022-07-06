@@ -93,25 +93,29 @@ body
 }
 .tt
 {	
-	background:#0dcaf0;/* 內左*/
+	background:#0dcaf0;
+	/* 內左*/
 }
 .tt td
 {	
 	
     border-color:rgb(255, 255, 255);
 	border-width: 2px;
-	background:#0dcaf0;/* 外上*/
+	background:#0dcaf0;
+	/* 外上*/
 }
 .pp
-{
-	background:#0dcaf0;/* 內右*/
+{	
+	background:#0dcaf0;
+	/* 內右*/
 }
 .pp td
 {
 	border-color:rgb(255, 255, 255);
 	border-width: 2px;
-	background:#0dcaf0;/* 外下*/
+	background:#0dcaf0;
     cursor: pointer;
+	/* 外下*/
 }
 input[type=text],input[type=password],input[type=submit],button,.button,input[type=reset],input[type=button],select，textarea,input[type=number]
 {
@@ -144,11 +148,17 @@ div.ww:hover > div.s
 	font-size:12px;
 }
 
-.ct_c {
+/* .ct_c {
     background: linear-gradient(to bottom,#feb0bd 3%,#fff 95%);
     background: -webkit-linear-gradient(top,#feb0bd 3%,#fff 95%);
     background-color: #feb0bd;
+} */
+
+
+.ct_c {
+    background-color: #98e8f8;
 }
+
 
 .ct_a {
     background:#0dcaf0;
@@ -163,4 +173,12 @@ div.ww:hover > div.s
     bottom: 0;
     width: 100%;
               /* Footer height */
+}
+
+.pink td{
+    background-color: #98e8f8;
+}
+
+.blue{
+	background-color: #98e8f8;
 }

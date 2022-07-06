@@ -20,9 +20,44 @@
    <button onclick='addCate("secondary")'>新增</button>
 </div>
 <!-- 分類區 -->
+<table class="all ">
+    <?php
+        foreach($primary as $primary_value){
+    ?>
+
+    <tr class="tt">
+        <td id="t<?=$primary_value['id'];?>"><?=$primary_value['name'];?></td>
+        <td class="ct">
+            <button onclick="editType(<?=$primary_value['id'];?>)">修改名稱</button>
+            <button onclick="del('category',<?=$primary_value['id'];?>)">刪除</button>
+        </td>
+    </tr>
+
+    <?php
+        $secondary=all('category',['parent'=>$primary_value['id']]);
+        if(count($secondary)>0){
+            foreach($secondary as $secondary_value){
+    ?>
+
+    <tr class="pp ct pink">
+        <td id="t<?=$secondary_value['id'];?>"><?=$secondary_value['name'];?></td>
+        <td>
+            <button onclick="editType(<?=$secondary_value['id'];?>)">修改名稱</button>
+            <button onclick="del('category',<?=$secondary_value['id'];?>)">刪除</button>
+        </td>
+    </tr>
+
+    <?php
+            }
+        }
+    }
+    ?>
+
+</table>
+
 <hr>
 <h1 class="ct">商品管理</h1>
-<div class="ct"><button>新增商品</button></div>
+<div class="ct"><button onclick="location.href='?do=add_item'">新增商品</button></div>
 <table class="all">
    <tr class="tt ct">
       <td>編號</td>
