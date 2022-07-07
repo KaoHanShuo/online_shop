@@ -55,30 +55,6 @@ function all($table,...$arg){
     return $rows;
     //return $pdo->query($sql)->fetchAll();
 }
- 
-function math($table,$math,$col,...$arg){   
-    global $pdo;
-    $sql="SELECT $math($col) FROM `$table` ";
-    switch(count($arg)){
-        case 1:
-            if(is_array($arg[0])){
-                foreach($arg[0] as $key=>$value){
-                    $tmp[]="`$key`='$value'";
-                }
-                $sql .=" where ".implode(" AND ",$tmp);
-            }else{
-                $sql .=$arg[0];
-            }
-        break;
-        case 2:
-            foreach($arg[0] as $key=>$value){
-                $tmp[]="`$key`='$value'";
-            }
-            $sql .=" where ".implode(" AND ",$tmp)." ".$arg[1];
-        break;
-    }    
-    return $pdo->query($sql)->fetchColumn();
-}
 
 #更新資料
 function update($table,$column,$where){

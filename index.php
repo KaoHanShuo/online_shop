@@ -97,17 +97,18 @@
 
     </nav>
 
-    <!-- Navbar Start --><!-- 左邊商品及右邊欄位 -->
+    <!-- 左邊商品及右邊欄位 -->
     <div><h1></div>
     <div class="container-fluid mb-5">
         <div class="row border-top px-xl-5">
+            <!-- 左邊商品欄位 -->
             <div class="col-lg-3 d-none d-lg-block">
                 <a class="btn shadow-none d-flex align-items-center justify-content-between bg-danger text-white w-100" aria-expanded="false" data-bs-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
                     <h6 class="m-0">全部商品</h6>
                     <i class="fa fa-angle-down text-dark"></i>
                 </a>
                 <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 bg-pink" id="navbar-vertical">
-                    <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
+                    <div class="navbar-nav w-100 overflow-hidden" style="height: 100%;min-height:100px;">
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link" data-bs-toggle="dropdown">衣服 <i class="fa fa-angle-down float-right mt-1"></i></a>
                             <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
@@ -128,15 +129,16 @@
                     </div>
                 </nav>
             </div>
+            <!-- 右邊include -->
             <div class="col-lg-9">
-                <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
+                <!-- <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
                     <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="container-fluid">
                         <h3 class="text-dark"></h3>
                     </div>
-                </nav>
+                </nav> -->
                 <div style="width:100%; border:5px  #FFAC55 solid;"  id="header-carousel" class="carousel slide" data-ride="carousel">
                 <!-- 檔案引入 -->
                     <?php
@@ -154,7 +156,7 @@
             </div>
         </div>
     </div>
-    <!-- Navbar End -->
+    <!-- -->
 
     <!-- Footer Start --><!-- 底部資訊 -->
     <div class="container-fluid bg-grey text-dark mt-5 pt-5 ">
