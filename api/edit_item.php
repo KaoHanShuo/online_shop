@@ -5,6 +5,7 @@
 if(isset($_FILES['file_img']['tmp_name'])){
    move_uploaded_file($_FILES['file_img']['tmp_name'],"../img/".$_FILES['file_img']['name']);
    $_POST['file_img']=$_FILES['file_img']['name'];
+   $_POST['primary']++;
    insert('item_detail',$_POST);
 }else if(isset($_POST['id']) && isset($_POST['sell_state'])){
    update('item_detail', ['sell_state'=>$_POST['sell_state']], ['id'=>$_POST['id']]);

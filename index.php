@@ -71,7 +71,7 @@
                     <li class="nav-item">
                         <a class="nav-link text-light" href="?do=news">最新消息</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Dropdown
                         </a>
@@ -86,7 +86,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled text-light">Disabled</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <form class="d-flex">
@@ -103,21 +103,46 @@
         <div class="row border-top px-xl-5">
             <!-- 左邊商品欄位 -->
             <div class="col-lg-3 d-none d-lg-block">
-                <a class="btn shadow-none d-flex align-items-center justify-content-between bg-danger text-white w-100" aria-expanded="false" data-bs-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
-                    <h6 class="m-0">全部商品</h6>
+                <a class="btn shadow-none d-flex align-items-center justify-content-between bg-danger text-white w-100"   style="height: 65px; margin-top: -1px; padding: 0 30px;">
+                    <h6 class="m-0">全部商品(<?=rows('item_detail',['sell_state'=>1]);?>)</h6>
                     <i class="fa fa-angle-down text-dark"></i>
                 </a>
                 <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 bg-pink" id="navbar-vertical">
-                    <div class="navbar-nav w-100 overflow-hidden" style="height: 100%;min-height:100px;">
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link" data-bs-toggle="dropdown">衣服 <i class="fa fa-angle-down float-right mt-1"></i></a>
+                    <div class="navbar-nav w-100 overflow-hidden" style="height: 100%;min-height:200px;">
+                        <?php
+                            $primarys = all('category',['parent'=>0]);
+                            foreach($primarys as $primary){
+                                //大類
+                                echo '<div class="nav-item dropdown">';
+                                echo '<a href="" class="nav-link" data-bs-toggle="dropdown">';
+                                echo $primary['name'];
+                                echo "(" . rows('item_detail',['primary'=>($primary['id'])]) . ")";
+                                echo '<i class="fa fa-angle-down float-right mt-1"></i></a>';
+                                echo '<div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">';
+                                
+                                //中類
+                                $secondarys = all('category',['parent'=>$primary['id']]);
+                                foreach($secondarys as $secondary){
+                                    echo '<a href="" class="dropdown-item">';
+                                    echo $secondary['name'];
+                                    //echo '123';
+                                    echo '</a>';
+                                }
+                                echo '</div>';
+                                echo '</div>';
+                            }
+                        ?>
+
+                        <!-- <div class="nav-item dropdown">
+                            <a href="" class="nav-link" data-bs-toggle="dropdown">衣服 <i class="fa fa-angle-down float-right mt-1"></i></a>
                             <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
-                                <a href="" class="dropdown-item">男裝</a>
-                                <a href="" class="dropdown-item">女裝</a>
-                                <a href="" class="dropdown-item">童裝</a>
+                                <a href="" class="dropdown-item">男裝區</a>
+                                <a href="" class="dropdown-item">女裝區</a>
+                                <a href="" class="dropdown-item">鞋子</a>
+                                <a href="" class="dropdown-item">皮包</a>
                             </div>
-                        </div>
-                        <a href="" class="nav-item nav-link">Shirts</a>
+                        </div> -->
+                        <!-- <a href="" class="nav-item nav-link">Shirts</a>
                         <a href="" class="nav-item nav-link">Jeans</a>
                         <a href="" class="nav-item nav-link">Swimwear</a>
                         <a href="" class="nav-item nav-link">Sleepwear</a>
@@ -125,12 +150,29 @@
                         <a href="" class="nav-item nav-link">Jumpsuits</a>
                         <a href="" class="nav-item nav-link">Blazers</a>
                         <a href="" class="nav-item nav-link">Jackets</a>
-                        <a href="" class="nav-item nav-link">Shoes</a>
+                        <a href="" class="nav-item nav-link">Shoes</a> -->
                     </div>
                 </nav>
             </div>
             <!-- 右邊include -->
             <div class="col-lg-9">
+
+                <!-- <div class="ww"><a href="#">全部商品(<?=rows('item_detail',['sell_state'=>1]);?>)</a>
+                    <?php
+                        /*<div class='ww'><div class='s'></div></div>*/
+                            $bigs=all('category',['parent'=>0]);
+                            foreach($bigs as $big){
+                                    echo "<div class='ww'>";
+                                    echo "<a href=''>";
+                                    echo         $big['name'];
+                                    echo "</a>";
+                                    echo "<div class='s'></div>";
+                                    echo "</div>";
+
+                    }
+                    ?>
+                </div> -->
+                
                 <!-- <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
                     <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>

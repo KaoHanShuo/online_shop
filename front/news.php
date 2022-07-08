@@ -6,10 +6,10 @@
     <td>標題</td>
   </tr>
   <tr class="ct_c">
-    <td  onclick="javascript:$('#n1').toggle();$('#list').toggle()">情人節特惠活動</td>
+    <td  onclick="javascript:$('#n1').toggle();$('#list').toggle()">七夕特賣活動</td>
   </tr>
   <tr class="pp">
-    <td onclick="javascript:$('#n2').toggle();$('#list').toggle()">年終特賣會開跑了</td>
+    <td onclick="javascript:$('#n2').toggle();$('#list').toggle()">換季大清倉</td>
   </tr>
 </table>
 </div>
@@ -17,11 +17,11 @@
 <table class="all">
   <tr>
     <td class="ct ct_c">標題</td>
-    <td class="ct_c">情人節特惠活動</td>
+    <td class="ct_c">七夕特賣活動</td>
   </tr>
   <tr>
     <td class="tt ct">內容</td>
-    <td class="pp">為了慶祝七夕情人節，將舉辦情人兩人到現場有七七折之特惠活動~</td>
+    <td class="pp">為了慶祝77情人節，情侶套裝都有打7.7折</td>
   </tr>
 </table>
 
@@ -30,11 +30,11 @@
 <table class="all">
   <tr>
     <td class="ct ct_c">標題</td>
-    <td class="ct_c">年終特賣會開跑了</td>
+    <td class="ct_c">換季大清倉</td>
   </tr>
   <tr>
     <td class="tt ct">內容</td>
-    <td class="pp">即日期至年底，凡會員購物滿仟送佰，買越多送越多~</td>
+    <td class="pp">冬裝便宜賣</td>
   </tr>
 </table>
 
