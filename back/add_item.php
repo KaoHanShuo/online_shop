@@ -1,12 +1,14 @@
 <h1 class="ct">新增商品</h1>
 <form action="api/edit_item.php" method="post" enctype="multipart/form-data">
+    <!-- 判斷api類型邏輯 -->
+    <input type="text" name="logic" value="addItem" hidden>
     <table class="all">
         <tr>
             <td class="tt ct ct_a">所屬大分類</td>
             <td class="pp ct_a">
                 <select name="primary" id="primary" onchange="changeType('primary')" size="3">
                     <?php
-                        $primary = all('category',['parent'=>0]);
+                        $primary = all('category',['parent'=>0]);//撈所有大分類
                         foreach($primary as $key => $value){
                             echo "<option value='$key'>".$value['name']."</option>";
                         }

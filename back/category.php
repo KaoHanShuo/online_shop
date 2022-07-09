@@ -67,7 +67,7 @@
         <td>操作</td>
     </tr>
 <?php
-    $rows = all('item_detail');
+    $rows = all('item_detail');//撈所有商品
     foreach($rows as $row){
 ?>
     <tr class="pp ct">
@@ -76,7 +76,7 @@
         <td><?=$row['stock'];?></td>
         <td><?=($row['sell_state']==1)?'販賣中':'已下架';?></td>
         <td>
-            <button onclick="location.href='?do=add_item'">修改</button>
+            <button onclick="location.href='?do=edit_item&id=<?=$row['id'];?>'">修改</button>
             <button onclick="del('item_detail',<?=$row['id'];?>)">刪除</button>
             <button onclick="upDown(<?=$row['id'];?>,1)">上架</button>
             <button onclick="upDown(<?=$row['id'];?>,0)">下架</button>
@@ -89,7 +89,7 @@
 
 <script> 
     function upDown(id,sell_state){
-        $.post("api/edit_item.php",{'id':id,'sell_state':sell_state},function(){
+        $.post("api/edit_item.php",{'id':id,'sell_state':sell_state,'logic':"upDown"},function(){
             location.reload();
         })
     }

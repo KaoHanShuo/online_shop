@@ -34,7 +34,7 @@ function editType(id){
 	}
 }
 
-//新增商品api
+//即時更新商品分類api
 function changeType(type){
     let primary,secondary;
     switch(type){
