@@ -80,6 +80,8 @@ body
 {
 	width:90%;
 	margin:10px auto 10px auto;
+	border-width:20px;
+	border-color:#101414;
 }
 .all td
 {
@@ -181,4 +183,10 @@ div.ww:hover > div.s
 
 .blue{
 	background-color: #98e8f8;
+}
+
+.black{
+	border-width:2px;
+	border-color:#D19C97;
+	border-style:solid;
 }

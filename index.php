@@ -116,14 +116,15 @@
                                 echo '<div class="nav-item dropdown">';
                                 echo '<a href="" class="nav-link" data-bs-toggle="dropdown">';
                                 echo $primary['name'];
-                                echo "(" . rows('item_detail',['primary'=>($primary['id'])]) . ")";
+                                echo "(" . rows('item_detail',['primary'=>($primary['id']), 'sell_state'=>1]) . ")";
                                 echo '<i class="fa fa-angle-down float-right mt-1"></i></a>';
                                 echo '<div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">';
                                 
                                 //中類
                                 $secondarys = all('category',['parent'=>$primary['id']]);
                                 foreach($secondarys as $secondary){
-                                    echo '<a href="" class="dropdown-item">';
+                                    echo " <a href='?type={$secondary['id']}' ";
+                                    echo 'class="dropdown-item">';
                                     echo $secondary['name'];
                                     //echo '123';
                                     echo '</a>';
