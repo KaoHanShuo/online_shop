@@ -108,7 +108,7 @@
                     <i class="fa fa-angle-down text-dark"></i>
                 </a>
                 <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 bg-pink" id="navbar-vertical">
-                    <div class="navbar-nav w-100 overflow-hidden" style="height: 100%;min-height:200px;">
+                    <div class="navbar-nav w-100 overflow-hidden" style="height: 100%;min-height:300px;">
                         <?php
                             $primarys = all('category',['parent'=>0]);
                             foreach($primarys as $primary){
@@ -118,7 +118,7 @@
                                 echo $primary['name'];
                                 echo "(" . rows('item_detail',['primary'=>($primary['id']), 'sell_state'=>1]) . ")";
                                 echo '<i class="fa fa-angle-down float-right mt-1"></i></a>';
-                                echo '<div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">';
+                                echo '<div class="dropdown-menu position-absolute bg-pink border-1 rounded-2 w-100 m-0 black">';
                                 
                                 //中類
                                 $secondarys = all('category',['parent'=>$primary['id']]);

@@ -186,7 +186,7 @@ div.ww:hover > div.s
 }
 
 .black{
-	border-width:2px;
-	border-color:#D19C97;
+	border-width:1px;
+	border-color:#111010;/*#D19C97;*/
 	border-style:solid;
 }
