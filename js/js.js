@@ -53,5 +53,16 @@ function changeType(type){
             })
         break;
     }
-    
+}
+
+function minus(){// front/detail
+    $number=$("#quantity").val();
+    if($number>0){$number--;}
+    //$number--;
+    $("#quantity").val($number);
+}
+function plus(max){// front/detail
+    $number=$("#quantity").val();
+    if(max>$number){$number++;}
+    $("#quantity").val($number);
 }

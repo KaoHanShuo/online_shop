@@ -26,26 +26,25 @@ echo "<h1 class='ct'>".$item['name']."</h1>";
             </button>
         </div>
 
-        <input type="text" name="quantity" id="quantity" value="1" class="form-control text-center">
+        <input type="text" name="quantity" id="quantity" value="1"  class="form-control text-center">
 
         <div class="input-group-btn">
-            <button class="btn btn-primary btn-plus"  onclick="plus()">
+            <button class="btn btn-primary btn-plus"  onclick="plus(<?=$item['stock'];?>)">
                 <i class="input-group-btn fa fa-plus"></i> 
             </button>
         </div>
     </div>
-    <!-- <img src="icon/0402.jpg" onclick="buy(<?=$item['id'];?>)"> -->
+    <img src="icon/0402.jpg" onclick="toBuy(<?=$item['id'];?>)">
 </div>
 
 <script>
-    function minus(){
-        $number=$("#quantity").val();
-        $number--;
-        $("#quantity").val($number);
-    }
-    function plus(){
-        $number=$("#quantity").val();
-        $number++;
-        $("#quantity").val($number);
+    function toBuy(id){
+    var qt=$("#quantity").val();
+        //location.href=` ?do=buycart&id=${id}&quantity=${$("#quantity").val()} `;
+        $.post("api/decide_quantity.php",{"id":id,"qt":qt},function(){
+            //alert(qt);
+            location.href="?do=buycart";
+            //location.reload();
+        })
     }
 </script>

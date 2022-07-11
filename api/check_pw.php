@@ -2,12 +2,6 @@
 //檢測帳號密碼正確
 //from front/login.php
 
-//$check = math('user','count','*',['acc'=>$_POST['acc'],'pw'=>$_POST['pw']]);
-
-if(!isset($_SESSION)){//判斷session是否已啟動
-    session_start();
-}
-
 $table = $_POST['table'];
 $check = rows($table,['acc'=>$_POST['acc'],'pw'=>$_POST['pw']]);
 

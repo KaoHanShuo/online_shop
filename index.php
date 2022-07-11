@@ -36,15 +36,25 @@
     <div class="container-fluid">
         <div class="row py-2 px-lg-5">
             <div class="col d-flex justify-content-end px-lg-5 gy-1">
-                <a class="text-dark px-2" href="?do=login">
-                    <i class=" bi bi-person-fill">會員登入</i>
-                </a>
+                <?php
+                if(isset($_SESSION['user'])){
+                    
+                    echo '<a class="text-dark px-2" href="?do=login"><i class="bi bi-person-fill">';
+                    echo $_SESSION['user'];
+                    echo '</i></a>';
+                }else{
+                    echo '<a class="text-dark px-2" href="?do=login"><i class="bi bi-person-fill">會員登入</i></a>';
+                }
+                ?>
+                
                 <a class="text-dark px-2" href="?do=buycart">
                     <i class="bi bi-cart-check">購物車</i>
                 </a>
-                <a class="text-dark px-2" href="?do=admin">
-                    <i class=" bi bi bi-person-workspace">管理員登入</i>
-                </a>
+                <?php
+                    if(!isset($_SESSION['user'])){
+                        echo '<a class="text-dark px-2" href="?do=admin"><i class="bi bi bi-person-workspace">管理員登入</i></a>';
+                    }
+                ?>
             </div>
         </div>
     </div>
@@ -71,6 +81,11 @@
                     <li class="nav-item">
                         <a class="nav-link text-light" href="?do=news">最新消息</a>
                     </li>
+                    <?php
+                    if(isset($_SESSION['user'])){
+                        echo '<li class="nav-item"><a class="nav-link text-light" href="?do=logout">登出</a></li>';
+                    }
+                    ?>
                     <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Dropdown
