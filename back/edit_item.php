@@ -58,9 +58,6 @@ $rows = find('item_detail',['id'=>$_GET['id']]);//撈一筆商品資料
             <td class="pp ct_a">
             <input type="text" name="no" id="no" value="<?=$rows['no']?>" hidden>
                 <?php
-                    // echo ' <input type="text" name="no" id="no" value=" ';
-                    // echo  $rows['no'];
-                    // echo  ' " hidden> ';
                     echo  $rows['no'];
                 ?>
             </td>

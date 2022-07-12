@@ -1,5 +1,12 @@
 <!-- 主頁 -->
-<?php include_once "base_inc.php";?>
+<?php include_once "base_inc.php";
+    if(!isset($_SESSION['admin'])){
+        to("index.php");
+        exit();
+    }
+    $admin = find('admin',['acc'=>$_SESSION['admin']]);
+    $permit = unserialize($admin['permit']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,33 +60,33 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-danger">
         <div class="container-fluid">
             <div class="">
-                <ul class="navbar-nav ct">
+                <ul class="navbar-nav ct" style="margin-left: 200px;">
                     <li class="nav-item">
-                        <a id="testb" class="nav-link text-light" href="?do=admin" style="margin-left: 100px;">管理權限設置</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="testb" class="nav-link text-light" href="?do=user">會員管理</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="testb" class="nav-link text-light" href="?do=category">商品分類與管理</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="testb" class="nav-link text-light" href="?do=order">訂單管理</a>
+                        <?= ( in_array(0,$permit)) ? '<a id="testb" class="nav-link text-light" href="?do=admin" >管理權限設置</a>' : "" ;?>
                     </li>
                     
                     <li class="nav-item">
-                        <a id="testb" class="nav-link text-light" href="?">最新消息管理</a>
+                        <?= ( in_array(1,$permit)) ? '<a id="testb" class="nav-link text-light" href="?do=category">商品分類與管理</a>' : "" ;?>
+                    </li>
+
+                    <li class="nav-item">
+                        <?= ( in_array(2,$permit)) ? '<a id="testb" class="nav-link text-light" href="?do=order">訂單管理</a>' : "" ;?>
+                    </li>
+
+                    <li class="nav-item">
+                        <?= ( in_array(3,$permit)) ? '<a id="testb" class="nav-link text-light" href="?do=user">會員管理</a>' : "" ;?> 
+                    </li>
+
+                    <li class="nav-item">
+                        <?= ( in_array(4,$permit)) ? '<a id="testb" class="nav-link text-light" href="?do=news">最新消息管理</a>' : "" ;?>
                     </li>
                    
                     <li class="nav-item">
                         <a id="testb" class="nav-link  text-light" href="?do=logout">登出</a>
                     </li>
-
                 </ul>
             </div>
-            
         </div>
-
     </nav>
 
     <!-- Navbar Start --><!-- 左邊商品及右邊欄位 -->
@@ -102,11 +109,20 @@
                     <?php
                         $do = $_GET['do'] ?? 'main';
                         $file = 'back/' . $do . ".php";
-                        if (file_exists($file)) {
+                        if(file_exists($file)){
                             include $file;
-                        } else {
-                            // echo "檔案不存在";
-                            include "back/admin.php";
+                        }else{
+                            if(in_array(1,$permit)){
+                                include "back/category.php";   
+                            }else if(in_array(2,$permit)){
+                                include "back/order.php";   
+                            }else if(in_array(3,$permit)){
+                                include "back/user.php";   
+                            }else if(in_array(4,$permit)){
+                                include "back/news.php";   
+                            }else if(in_array(0,$permit)){
+                                include "back/admin.php";   
+                            }
                         }
                     ?>
                 <!-- 檔案引入 -->

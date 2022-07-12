@@ -55,6 +55,12 @@ function changeType(type){
     }
 }
 
+function upDown(id,sell_state){//商品上下架
+    $.post("api/edit_item.php",{'id':id,'sell_state':sell_state,'logic':"upDown"},function(){
+        location.reload();
+    })
+}
+
 function minus(){// front/detail
     $number=$("#quantity").val();
     if($number>0){$number--;}
@@ -66,3 +72,7 @@ function plus(max){// front/detail
     if(max>$number){$number++;}
     $("#quantity").val($number);
 }
+
+function refresh_code(){ //驗證碼刷新
+    document.getElementById("imgcode").src="./api/create_captcha.php"; 
+} 

@@ -1,8 +1,6 @@
 <?php include_once "../base_inc.php";
-//from front/buycart
+//from front/detail
 
-    //$_POST['id']
-    //$_POST['qt']
-    $_SESSION['cart'][$_POST['id']]=$_POST['qt'];
-    //to("../index.php?do=buycart"); 
+$_SESSION['cart'][$_POST['id']]=$_POST['qt'];//存成2維陣列，裡面的每個陣列=[商品(id)=>幾個(qt)]
+
 ?>

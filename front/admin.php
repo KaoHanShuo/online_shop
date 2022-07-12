@@ -25,10 +25,6 @@
 </div> 
 
 <script>
-   function refresh_code(){ //驗證碼刷新
-      document.getElementById("imgcode").src="./api/create_captcha.php"; 
-   } 
-
    function login(){ //帳號登入
       let data={
       acc:$("#acc").val(),

@@ -38,13 +38,10 @@ echo "<h1 class='ct'>".$item['name']."</h1>";
 </div>
 
 <script>
-    function toBuy(id){
-    var qt=$("#quantity").val();
-        //location.href=` ?do=buycart&id=${id}&quantity=${$("#quantity").val()} `;
-        $.post("api/decide_quantity.php",{"id":id,"qt":qt},function(){
-            //alert(qt);
-            location.href="?do=buycart";
-            //location.reload();
-        })
+    function toBuy(id){//購物資訊暫存到session
+    var qt=$("#quantity").val();     
+    $.post("api/decide_quantity.php",{"id":id,"qt":qt},function(){
+        location.href="?do=buycart";
+    })
     }
 </script>

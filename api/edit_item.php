@@ -4,14 +4,6 @@
 //from back/category
 //from back/edit_item
 
-// if(isset($_FILES['file_img']['tmp_name'])){
-//    move_uploaded_file($_FILES['file_img']['tmp_name'],"../img/".$_FILES['file_img']['name']);
-//    $_POST['file_img']=$_FILES['file_img']['name'];
-//    $_POST['primary']++;
-//    insert('item_detail',$_POST);
-// }else if(isset($_POST['id']) && isset($_POST['sell_state'])){
-//    update('item_detail', ['sell_state'=>$_POST['sell_state']], ['id'=>$_POST['id']]);
-// }
 switch($_POST['logic']){
     case "editItem":
 		move_uploaded_file($_FILES['file_img']['tmp_name'],"../img/".$_FILES['file_img']['name']);
@@ -38,9 +30,6 @@ switch($_POST['logic']){
 		update('item_detail', ['sell_state'=>$_POST['sell_state']], ['id'=>$_POST['id']]);
 	break;
 }
-// if($_POST['logic']=="editItem"){
-//       to("../back.php?do=category"); 
-// }
 
 to("../back.php?do=category"); 
 ?>

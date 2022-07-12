@@ -1,3 +1,4 @@
+<!-- 購物車介面 -->
 <?php
 if(!isset($_SESSION['user'])){
     to("?do=login");
@@ -15,9 +16,6 @@ if(empty($_SESSION['cart'])){
 }else{
     //print_r($_SESSION['cart']);
 }
-
-//echo "你要購買的商品id為".$_GET['id'];
-//echo "數量為".$_GET['id'];//need fix
 ?> 
 
 <h1 class="ct"><?=$_SESSION['user'];?>的購物車</h1>
@@ -33,9 +31,10 @@ if(empty($_SESSION['cart'])){
     </tr>
     <?php
     $num=0;
-    foreach($_SESSION['cart'] as $id => $quantity){
-        $item=find('item_detail',$id);
-        $num++;
+    if(!empty($_SESSION['cart'])){
+        foreach($_SESSION['cart'] as $id => $quantity){
+            $item=find('item_detail',$id);
+            $num++;
     ?>
     <tr class="pp ct">
         <td><?=$num;?></td>
@@ -49,6 +48,7 @@ if(empty($_SESSION['cart'])){
         </td>
     </tr>
     <?php
+        }
     }
     ?>
 </table>
@@ -58,19 +58,18 @@ if(empty($_SESSION['cart'])){
 </div>
 
 <script>
-    function changeQt(num,id,qt){
+    function changeQt(num,id,qt){//數量改變ajax
         let number = new Array();
         $("input[type='number']").each(function(index,dom){
             number.push($(dom).val());
         })
         qt=number[num-1];
         $.post("api/change_quantity.php",{"id":id,"qt":qt},function(){
-            //alert(qt);
             location.reload();
         })
     }
 
-    function delCart(id){
+    function delCart(id){//刪除購物車
         $.post("api/delete_cart.php",{id},function(){
             location.href='?do=buycart';
         })

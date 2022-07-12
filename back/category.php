@@ -86,11 +86,3 @@
     }
 ?>
 </table> 
-
-<script> 
-    function upDown(id,sell_state){
-        $.post("api/edit_item.php",{'id':id,'sell_state':sell_state,'logic':"upDown"},function(){
-            location.reload();
-        })
-    }
-</script> 

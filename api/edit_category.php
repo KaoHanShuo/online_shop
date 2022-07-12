@@ -11,7 +11,6 @@ switch($_POST['type']){
         insert('category',['name'=>$_POST['secondary'],'parent'=>$_POST['primary']]);
     break;
 }
-//insert('category',$_POST[]);
 
 //更新
 if($_POST['update']){

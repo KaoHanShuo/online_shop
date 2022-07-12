@@ -3,14 +3,6 @@
 #from back/category
 #from back/add_item
 
-
-// $parent = isset($_POST['parent']) ? $_POST['parent'] : 0;
-// $options = all('category',['parent'=>$parent]);
-
-// foreach($options as $opt){
-//    echo "<option value='{$opt['id']}'>{$opt['name']}</option>";
-// } 
-
 switch($_POST['type']){//type=primary,$_post['primary']=key
 	case "primary":
 		$options=all('category');

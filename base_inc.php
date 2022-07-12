@@ -83,24 +83,6 @@ function insert($table,$array){
     return $pdo->exec($sql);
 }
 
-// public function save($array){
-//     if(isset($array['id'])){
-//         #update
-//         foreach($array as $key=>$value){
-//             if($key!='id'){
-
-//                 $tmp[]="`$key`='$value'";
-//             }
-//         }
-//         $sql="UPDATE $this->table SET ".implode(",",$tmp)." WHERE `id`='{$array['id']}'";
-//     }else{
-//         #insert
-//         $sql="INSERT INTO $this->table (`".implode("`,`",array_keys($array))."`) VALUES('".implode("','",$array)."')";
-//     }
-//     return $this->pdo->exec($sql);
-// }
-
-
 #刪除資料
 function del($table,$id){
     global $pdo;
@@ -134,21 +116,5 @@ function dd($array){
     print_r($array);
     echo "</pre>";
 }
-
-
-// $Admin=new DB("admin");
-
-// /*新增一次就好 
-// $admin['acc']='admin';
-// $admin['pw']='1234';
-// $admin['pr']=serialize([1,2,3,4,5]);
-// $Admin->save($admin);*/
-
-// $Mem=new DB("member");
-// $Bot=new DB("bottom");
-// $Ord=new DB("ord");
-// $Type=new DB("type");
-// $Goods=new DB("goods");
-
 ?>
 

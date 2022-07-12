@@ -22,7 +22,7 @@
         <td>
             <?php
                 if($row['acc']=='admin'){
-                echo "主管理員";
+                    echo "主管理員";
                 }else{
             ?>
 

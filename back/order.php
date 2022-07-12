@@ -14,7 +14,6 @@
       <td>管理</td>
    </tr>
    <?php
-   
    foreach($rows as $row){
    ?>
    <tr class="pp">

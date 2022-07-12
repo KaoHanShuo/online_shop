@@ -14,10 +14,10 @@
    <tr class="pp">
       <td><?=$row['name'];?></td>
       <td><?=$row['acc'];?></td>
-      <td><?=$row['register_data'];?></td> <!--date("Y-m-d",strtotime($row['regdate']))-->
+      <td><?=$row['register_data'];?></td>
       <td>
          <button onclick="location.href='?do=edit_user&id=<?=$row['id'];?>'">修改</button>
-         <button onclick="del('member',<?=$row['id'];?>)">刪除</button>
+         <button onclick="del('user',<?=$row['id'];?>)">刪除</button>
       </td>
    </tr>
    <?php

@@ -76,7 +76,7 @@
                         <a class="nav-link text-light" aria-current="page" href="?">回首頁</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="?do=look">關於我們</a>
+                        <a class="nav-link text-light" href="?do=look">關於</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="?do=news">最新消息</a>
@@ -202,11 +202,10 @@
                     <?php
                         $do = $_GET['do'] ?? 'main';
                         $file = 'front/' . $do . ".php";
-                        if (file_exists($file)) {
-                                include $file;
-                        } else {
-                                // echo "檔案不存在";
-                                include "front/main.php";
+                        if(file_exists($file)){
+                            include $file;
+                        }else{
+                            include "front/main.php";
                         }
                     ?>
                 <!-- 檔案引入 -->
