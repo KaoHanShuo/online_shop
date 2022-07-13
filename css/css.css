@@ -85,7 +85,7 @@ body
 }
 .all td
 {
-	min-width:50px;
+	width:50px;
 	padding:10px;
 }
 .middle

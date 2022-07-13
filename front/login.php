@@ -5,7 +5,7 @@
 <table class='all'>
     <tr>
         <td class="ct ct_a">帳號</td>
-        <td class="pp ct_a"><input type="text" name="acc" id="acc" ><h6>133</h6></td>
+        <td class="pp ct_a"><input type="text" name="acc" id="acc" ></td>
     </tr>
     <tr>
         <td class="ct ct_a">密碼</td>

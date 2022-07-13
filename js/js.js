@@ -76,3 +76,59 @@ function plus(max){// front/detail
 function refresh_code(){ //驗證碼刷新
     document.getElementById("imgcode").src="./api/create_captcha.php"; 
 } 
+
+
+function look0(){
+    let name = $("#name").val();
+    let word = RegExp("least");
+    $.post("./api/valid.php",{'name':name},function(res){
+        $("#valid_name").html(res);
+    })
+}
+
+function look1(){
+    //$("#valid_name").html("<p>*124</p>");
+    let acc = $("#acc").val();
+    let word = RegExp("least");
+    $.post("./api/valid.php",{'acc':acc},function(res){
+        if(word.test(res)){
+            $("#valid_acc").html("*至少六個字母");
+        }else{
+            $("#valid_acc").html(res);
+        }
+    })
+    //console.log(test);
+}
+function look2(){
+    let pw = $("#pw").val();
+    let word = RegExp("least");
+    $.post("./api/valid.php",{'pw':pw},function(res){
+        if(word.test(res)){
+            $("#valid_pw").html("*至少六個字母");
+        }else{
+            $("#valid_pw").html(res);
+        }
+    })
+}
+function look3(){
+    let tel = $("#tel").val();
+    let word = RegExp("least");
+    $.post("./api/valid.php",{'tel':tel},function(res){
+        $("#valid_tel").html(res);
+    })
+}
+function look4(){
+    let addr = $("#addr").val();
+    let word = RegExp("least");
+    $.post("./api/valid.php",{'addr':addr},function(res){
+        $("#valid_addr").html(res);
+    })
+}
+function look5(){
+    let email = $("#email").val();
+    let word = RegExp("least");
+    $.post("./api/valid.php",{'email':email},function(res){
+        $("#valid_email").html(res);
+    })
+}
+

@@ -4,36 +4,36 @@
 <table class="all" >
     <tr>
         <td class="tt ct ct_a">姓名</td>
-        <td class="pp ct_a"><input type="text" name="name" id="name"></td>
+        <td class="pp ct_a"><input type="text" name="name" id="name"  onblur="look0()"><label><p id="valid_name"></p></label></td>
     </tr>
     <tr>
         <td class="tt ct ct_a">帳號</td>
         <td class="pp ct_a">
-            <input type="text" name="acc" id="acc">
+            <input type="text" name="acc" id="acc" onblur="look1()">
             <button onclick="checkAcc()">檢測帳號</button>
-            
+            <label><p id="valid_acc"></p></label>
         </td>
     </tr>
     <tr>
         <td class="tt ct ct_a">密碼</td>
-        <td class="pp ct_a"><input type="password" name="pw" id="pw" onfocus="look()">
-            <label><p id="testa">123</p></label>
+        <td class="pp ct_a"><input type="password" name="pw" id="pw" onblur="look2()">
+            <label><p id="valid_pw"></p></label>
         </td>
         
     </tr>
     <tr>
         <td class="tt ct ct_a">電話</td>
-        <td class="pp ct_a"><input type="text" name="tel" id="tel" onfocus="look()">
-            
+        <td class="pp ct_a"><input type="text" name="tel" id="tel" onblur="look3()">
+            <label><p id="valid_tel"></p></label>
         </td>
     </tr>
     <tr>
         <td class="tt ct ct_a">住址</td>
-        <td class="pp ct_a"><input type="text" name="addr" id="addr"></td>
+        <td class="pp ct_a"><input type="text" name="addr" id="addr" onblur="look4()"><label><p id="valid_addr" ></p></label></td>
     </tr>
     <tr>
         <td class="tt ct ct_a">電子信箱</td>
-        <td class="pp ct_a"><input type="text" name="email" id="email"></td>
+        <td class="pp ct_a"><input type="text" name="email" id="email" onblur="look5()"><label><p id="valid_email"></p></label></td>
     </tr>
 </table>
 
@@ -50,7 +50,7 @@
             if(parseInt(check) || $("#acc").val()=='admin'){ //if(check>0)
                 alert("帳號已存在");
             }else{
-                alert("此帳號可使用");
+                alert("此帳號沒有重複");
             }
         })
     }
@@ -65,21 +65,21 @@
             tel:$("#tel").val(),
             email:$("#email").val(),
         }
-        $.post("./api/check_acc.php",{acc:data.acc},function(check){ //  ./api/check_acc.php
+        $.post("./api/check_acc.php",{acc:data.acc},function(check){ //  
             if(parseInt(check) || data.acc=='admin'){ //if(check>0)
                 alert("帳號已存在");
             }else{
-                $.post("./api/reg.php",data,function(){ //  ./api/reg.php
-                alert("註冊成功");
-                location.href='?do=login';
+                $.post("./api/reg.php",data,function(res){ //無法回傳物件
+                if(res==0){//驗證成功
+                    alert("註冊成功");
+                    location.href='?do=login';
+                }else{
+                    alert("註冊失敗");
+                }
+                //typeof
                 })
             }
         })
     }
-
-    function look(){
-        $("#test").html("<p>*124</p>");
-    }
-    
 </script> 
 
