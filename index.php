@@ -1,5 +1,8 @@
 <!-- 主頁 -->
-<?php include_once "base_inc.php";?>
+<?php include_once "base_inc.php";
+require 'vendor/autoload.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,14 +22,6 @@
     <link href="css/bootstrap.css" rel="stylesheet" >
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-  
-
-    <!-- <style type="text/css">
-        .bg-secondary {
-            background-color: #EDF1FF;
-        }
-    </style> -->
-
     <link href="./css/css.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -86,22 +81,6 @@
                         echo '<li class="nav-item"><a class="nav-link text-light" href="?do=logout">登出</a></li>';
                     }
                     ?>
-                    <!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled text-light">Disabled</a>
-                    </li> -->
                 </ul>
             </div>
             <form class="d-flex">
@@ -149,24 +128,6 @@
                             }
                         ?>
 
-                        <!-- <div class="nav-item dropdown">
-                            <a href="" class="nav-link" data-bs-toggle="dropdown">衣服 <i class="fa fa-angle-down float-right mt-1"></i></a>
-                            <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
-                                <a href="" class="dropdown-item">男裝區</a>
-                                <a href="" class="dropdown-item">女裝區</a>
-                                <a href="" class="dropdown-item">鞋子</a>
-                                <a href="" class="dropdown-item">皮包</a>
-                            </div>
-                        </div> -->
-                        <!-- <a href="" class="nav-item nav-link">Shirts</a>
-                        <a href="" class="nav-item nav-link">Jeans</a>
-                        <a href="" class="nav-item nav-link">Swimwear</a>
-                        <a href="" class="nav-item nav-link">Sleepwear</a>
-                        <a href="" class="nav-item nav-link">Sportswear</a>
-                        <a href="" class="nav-item nav-link">Jumpsuits</a>
-                        <a href="" class="nav-item nav-link">Blazers</a>
-                        <a href="" class="nav-item nav-link">Jackets</a>
-                        <a href="" class="nav-item nav-link">Shoes</a> -->
                     </div>
                 </nav>
             </div>
@@ -188,15 +149,7 @@
                     }
                     ?>
                 </div> -->
-                
-                <!-- <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
-                    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-target="#navbarCollapse">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="container-fluid">
-                        <h3 class="text-dark"></h3>
-                    </div>
-                </nav> -->
+
                 <div style="width:100%; border:5px  #FFAC55 solid;"  id="header-carousel" class="carousel slide" data-ride="carousel">
                 <!-- 檔案引入 -->
                     <?php

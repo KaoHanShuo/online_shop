@@ -90,20 +90,7 @@
     </nav>
 
     <!-- Navbar Start --><!-- 左邊商品及右邊欄位 -->
-    <div><h1></div>
-    
-                <!-- <div id="left" class="ct" style="margin-left: 100px;">
-                    <div style="min-height:400px;">
-                        <a href="?do=admin">管理權限設置</a>
-                        <a href="?do=th">商品分類與管理</a>
-                        <a href="?do=order">訂單管理</a>
-                        <a href="?do=mem">會員管理</a>
-                        <a href="?do=news">最新消息管理</a>
-                        <a href="?do=logout" style="color:#f00;">登出</a>
-                    </div>
-                </div> -->
-              
-               
+    <div><h1></div>               
                 <div style="width:80%; border:5px #FFAC55 solid;"  id="header-carousel" class="carousel slide middle" data-ride="carousel">
                 <!-- 檔案引入 -->
                     <?php

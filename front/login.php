@@ -5,7 +5,7 @@
 <table class='all'>
     <tr>
         <td class="ct ct_a">帳號</td>
-        <td class="pp ct_a"><input type="text" name="acc" id="acc"></td>
+        <td class="pp ct_a"><input type="text" name="acc" id="acc" ><h6>133</h6></td>
     </tr>
     <tr>
         <td class="ct ct_a">密碼</td>
@@ -17,6 +17,7 @@
             <input type="text" name="ans" id="ans">
             <p><img id="imgcode" src="./api/create_captcha.php" onclick="refresh_code()"/></p>
         </td>
+        
     </tr>
     
 </table>
@@ -25,12 +26,6 @@
     <a href="?do=reg"><button>註冊</button></a>|
     <button onclick="login()">確認</button>
 </div> 
-
-<!-- <i class="bi bi-person-plus"></i> -->
-<!-- <div class="ct">
-    <button onclick="reg()">註冊</button>
-    <button onclick="login()">確認</button>
-</div>  -->
 
 <script>
     function refresh_code(){ //驗證碼刷新
