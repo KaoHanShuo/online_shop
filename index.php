@@ -34,7 +34,7 @@ require 'vendor/autoload.php';
                 <?php
                 if(isset($_SESSION['user'])){
                     
-                    echo '<a class="text-dark px-2" href="?do=login"><i class="bi bi-person-fill">';
+                    echo '<a class="text-dark px-2" href="?do=edit_member"><i class="bi bi-person-fill">會員';
                     echo $_SESSION['user'];
                     echo '</i></a>';
                 }else{
@@ -88,7 +88,6 @@ require 'vendor/autoload.php';
                 <button class="" type="submit">Search</button>
             </form>
         </div>
-
     </nav>
 
     <!-- 左邊商品及右邊欄位 -->

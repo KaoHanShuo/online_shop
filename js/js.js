@@ -78,15 +78,15 @@ function refresh_code(){ //驗證碼刷新
 } 
 
 
-function look0(){
+function lookName(){
     let name = $("#name").val();
     let word = RegExp("least");
     $.post("./api/valid.php",{'name':name},function(res){
         $("#valid_name").html(res);
     })
 }
-
-function look1(){
+//front/reg
+function lookAcc(){
     //$("#valid_name").html("<p>*124</p>");
     let acc = $("#acc").val();
     let word = RegExp("least");
@@ -99,7 +99,7 @@ function look1(){
     })
     //console.log(test);
 }
-function look2(){
+function lookPw(){
     let pw = $("#pw").val();
     let word = RegExp("least");
     $.post("./api/valid.php",{'pw':pw},function(res){
@@ -110,21 +110,21 @@ function look2(){
         }
     })
 }
-function look3(){
+function lookTel(){
     let tel = $("#tel").val();
     let word = RegExp("least");
     $.post("./api/valid.php",{'tel':tel},function(res){
         $("#valid_tel").html(res);
     })
 }
-function look4(){
+function lookAddr(){
     let addr = $("#addr").val();
     let word = RegExp("least");
     $.post("./api/valid.php",{'addr':addr},function(res){
         $("#valid_addr").html(res);
     })
 }
-function look5(){
+function lookEmail(){
     let email = $("#email").val();
     let word = RegExp("least");
     $.post("./api/valid.php",{'email':email},function(res){
@@ -132,3 +132,20 @@ function look5(){
     })
 }
 
+function editMember(){//fron/edit_member
+    let data={
+        id:$("#id").val(),
+        name:$("#name").val(),
+        addr:$("#addr").val(),
+        tel:$("#tel").val(),
+        email:$("#email").val(),
+    }
+    $.post("api/edit_member.php",data,function(res){ 
+        if(res==0){//驗證成功
+            alert("修改成功");
+        }else if(res==1){
+            alert("修改失敗");
+            location.reload();
+        }
+    })
+}

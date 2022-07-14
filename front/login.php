@@ -15,7 +15,7 @@
         <td class="ct ct_a">驗證碼</td>
         <td class="pp ct_a">
             <input type="text" name="ans" id="ans">
-            <p><img id="imgcode" src="./api/create_captcha.php" onclick="refresh_code()"/></p>
+            <p><img id="imgcode" src="./api/create_captcha.php" onclick="refresh_code()"/>可點擊圖片刷新</p>
         </td>
         
     </tr>

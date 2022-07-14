@@ -4,36 +4,36 @@
 <table class="all" >
     <tr>
         <td class="tt ct ct_a">姓名</td>
-        <td class="pp ct_a"><input type="text" name="name" id="name"  onblur="look0()"><label><p id="valid_name"></p></label></td>
+        <td class="pp ct_a"><input type="text" name="name" id="name"  onblur="lookName()"><label><p id="valid_name"></p></label></td>
     </tr>
     <tr>
         <td class="tt ct ct_a">帳號</td>
         <td class="pp ct_a">
-            <input type="text" name="acc" id="acc" onblur="look1()">
+            <input type="text" name="acc" id="acc" onblur="lookAcc()">
             <button onclick="checkAcc()">檢測帳號</button>
             <label><p id="valid_acc"></p></label>
         </td>
     </tr>
     <tr>
         <td class="tt ct ct_a">密碼</td>
-        <td class="pp ct_a"><input type="password" name="pw" id="pw" onblur="look2()">
+        <td class="pp ct_a"><input type="password" name="pw" id="pw" onblur="lookPw()">
             <label><p id="valid_pw"></p></label>
         </td>
         
     </tr>
     <tr>
         <td class="tt ct ct_a">電話</td>
-        <td class="pp ct_a"><input type="text" name="tel" id="tel" onblur="look3()">
+        <td class="pp ct_a"><input type="text" name="tel" id="tel" onblur="lookTel()">
             <label><p id="valid_tel"></p></label>
         </td>
     </tr>
     <tr>
         <td class="tt ct ct_a">住址</td>
-        <td class="pp ct_a"><input type="text" name="addr" id="addr" onblur="look4()"><label><p id="valid_addr" ></p></label></td>
+        <td class="pp ct_a"><input type="text" name="addr" id="addr" onblur="lookAddr()"><label><p id="valid_addr" ></p></label></td>
     </tr>
     <tr>
         <td class="tt ct ct_a">電子信箱</td>
-        <td class="pp ct_a"><input type="text" name="email" id="email" onblur="look5()"><label><p id="valid_email"></p></label></td>
+        <td class="pp ct_a"><input type="text" name="email" id="email" onblur="lookEmail()"><label><p id="valid_email"></p></label></td>
     </tr>
 </table>
 
@@ -73,7 +73,7 @@
                 if(res==0){//驗證成功
                     alert("註冊成功");
                     location.href='?do=login';
-                }else{
+                }else if(res==1){
                     alert("註冊失敗");
                 }
                 //typeof
