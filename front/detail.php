@@ -34,7 +34,8 @@ echo "<h1 class='ct'>".$item['name']."</h1>";
             </button>
         </div>
     </div>
-    <img src="icon/0402.jpg" onclick="toBuy(<?=$item['id'];?>)">
+    <button onclick="toBuy(<?=$item['id'];?>)">確認</button>
+    <!-- <img src="icon/0402.jpg" onclick="toBuy(<?=$item['id'];?>)"> -->
 </div>
 
 <script>

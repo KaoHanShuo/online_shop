@@ -1,7 +1,7 @@
 <?php include_once "../base_inc.php";
-include_once "../vendor/autoload.php";
+include_once __DIR__ . "/../vendor/autoload.php";
 //come from front/reg.php
-//use wixel\Gump;
+
 $gump = new GUMP();
 
 //移除跨站攻擊的不安全代碼

@@ -132,23 +132,6 @@ require 'vendor/autoload.php';
             </div>
             <!-- 右邊include -->
             <div class="col-lg-9">
-
-                <!-- <div class="ww"><a href="#">全部商品(<?=rows('item_detail',['sell_state'=>1]);?>)</a>
-                    <?php
-                        /*<div class='ww'><div class='s'></div></div>*/
-                            $bigs=all('category',['parent'=>0]);
-                            foreach($bigs as $big){
-                                    echo "<div class='ww'>";
-                                    echo "<a href=''>";
-                                    echo         $big['name'];
-                                    echo "</a>";
-                                    echo "<div class='s'></div>";
-                                    echo "</div>";
-
-                    }
-                    ?>
-                </div> -->
-
                 <div style="width:100%; border:5px  #FFAC55 solid;"  id="header-carousel" class="carousel slide" data-ride="carousel">
                 <!-- 檔案引入 -->
                     <?php
