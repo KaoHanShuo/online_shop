@@ -2,6 +2,7 @@
 <?php include_once "base_inc.php";
 require 'vendor/autoload.php';
 //if(!isset($_SESSION))session_start();
+ob_start();
 ?>
 
 <!DOCTYPE html>
@@ -184,3 +185,7 @@ require 'vendor/autoload.php';
 </body>
 
 </html>
+
+<?php
+ob_end_flush();
+?>

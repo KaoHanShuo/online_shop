@@ -62,8 +62,8 @@ if(!isset($_SESSION['cart'])){
     總價:<input type="text" name="total" id="total" value="<?=$total;?>" readonly>
     </div>
     <div class="ct">
-        <button type="submit" >確定送出</button>
-        <button onclick="location.href='?do=buycart'">返回修改訂單</button>
+        <button type="submit">確定送出</button>
+        <button type="button" onclick="location.href='?do=buycart'">返回修改訂單</button>
     </div>
 
 </form>
