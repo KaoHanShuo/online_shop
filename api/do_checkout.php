@@ -6,9 +6,6 @@ $LOL=new ECPay_AllInOne();
 $_POST['number'] = date("YmdHi").rand(1,99);
 $_POST['items'] = serialize($_SESSION['cart']);
 insert('item_order',$_POST);
-unset($_SESSION['cart']);
-
-
 try {
         
     $obj = new ECPay_AllInOne();
@@ -26,15 +23,22 @@ try {
     $obj->Send['ReturnURL']         = "http://localhost/online_shop/front/ecpay_callback.php" ;    //付款完成通知回傳的網址
     $obj->Send['MerchantTradeNo']   = $MerchantTradeNo;                          //訂單編號
     $obj->Send['MerchantTradeDate'] = date('Y/m/d H:i:s');                       //交易時間
-    $obj->Send['TotalAmount']       = 2000;                                      //交易金額
-    $obj->Send['TradeDesc']         = "good to drink" ;                          //交易描述
+    $obj->Send['TotalAmount']       = $_POST['total'];                                      //交易金額
+    $obj->Send['TradeDesc']         = "thank you" ;                          //交易描述
     $obj->Send['ChoosePayment']     = ECPay_PaymentMethod::Credit ;              //付款方式:Credit
     $obj->Send['IgnorePayment']     = ECPay_PaymentMethod::GooglePay ;           //不使用付款方式:GooglePay
 
     //訂單的商品資料
-    array_push($obj->Send['Items'], array('Name' => "歐付寶黑芝麻豆漿", 'Price' => (int)"2000",
-               'Currency' => "元", 'Quantity' => (int) "1", 'URL' => "dedwed"));
 
+    foreach($_SESSION['cart'] as $id => $quantity){
+        $item = find('item_detail',$id);
+        array_push($obj->Send['Items'], array('Name' => $item['name'], 'Price' => (int)$item['price'],'Currency' => "元", 'Quantity' => (int)$quantity, 'URL' => "dedwed"));
+    }
+
+    unset($_SESSION['cart']);
+    // array_push($obj->Send['Items'], array('Name' => "歐付寶黑芝麻豆漿", 'Price' => (int)"2000",
+    //            'Currency' => "元", 'Quantity' => (int) "1", 'URL' => "dedwed"));
+              
 
     //Credit信用卡分期付款延伸參數(可依系統需求選擇是否代入)
     //以下參數不可以跟信用卡定期定額參數一起設定
@@ -47,7 +51,9 @@ try {
     $obj->CheckOut();
 } catch (Exception $e) {
     echo $e->getMessage();
-} 
+}
+
+
 
 
 

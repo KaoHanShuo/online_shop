@@ -1,6 +1,7 @@
 <!-- 主頁 -->
 <?php include_once "base_inc.php";
 require 'vendor/autoload.php';
+//if(!isset($_SESSION))session_start();
 ?>
 
 <!DOCTYPE html>
@@ -78,6 +79,7 @@ require 'vendor/autoload.php';
                     </li>
                     <?php
                     if(isset($_SESSION['user'])){
+                        echo '<li class="nav-item"><a class="nav-link text-light" href="?do=check_order">查詢訂單</a></li>';
                         echo '<li class="nav-item"><a class="nav-link text-light" href="?do=logout">登出</a></li>';
                     }
                     ?>

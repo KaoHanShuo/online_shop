@@ -1,5 +1,7 @@
 # This is online_shop
 
+# php:7.4.8
+
 ## 已完成：
     1. 註冊(含驗證碼)
     2. 登入
