@@ -1,11 +1,14 @@
 <?php include_once "../base_inc.php";
-require __DIR__ . '../../vendor/autoload.php';
+include_once "../Library/ECPay.Payment.Integration.php";
+//require __DIR__ . '../../vendor/autoload.php';
 
-$LOL=new ECPay_AllInOne();
+//$LOL=new ECPay_AllInOne();
 
+// $_POST['number'] = date("YmdHi").rand(1,99);
+// $_POST['items'] = serialize($_SESSION['cart']);
+// insert('item_order',$_POST);
 $_POST['number'] = date("YmdHi").rand(1,99);
-$_POST['items'] = serialize($_SESSION['cart']);
-insert('item_order',$_POST);
+
 try {
         
     $obj = new ECPay_AllInOne();
@@ -20,7 +23,10 @@ try {
 
     //基本參數(請依系統規劃自行調整)
     $MerchantTradeNo = $_POST['number'] ;
-    $obj->Send['ReturnURL']         = "http://localhost/online_shop/front/ecpay_callback.php" ;    //付款完成通知回傳的網址
+    $obj->Send['ReturnURL']         = "http://localhost/online_shop/api/ecpay_callback.php" ;    //付款完成通知回傳的網址
+    //$obj->Send['ClientRedirectURL'] = "http://localhost/online_shop";
+    //$obj->Send['ClientBackURL']     = "http://localhost/online_shop" ;
+    $obj->Send['OrderResultURL'] = "http://localhost/online_shop/api/ecpay_callback.php";//自動跳轉回頁面並POST
     $obj->Send['MerchantTradeNo']   = $MerchantTradeNo;                          //訂單編號
     $obj->Send['MerchantTradeDate'] = date('Y/m/d H:i:s');                       //交易時間
     $obj->Send['TotalAmount']       = $_POST['total'];                                      //交易金額
@@ -29,13 +35,12 @@ try {
     $obj->Send['IgnorePayment']     = ECPay_PaymentMethod::GooglePay ;           //不使用付款方式:GooglePay
 
     //訂單的商品資料
-
     foreach($_SESSION['cart'] as $id => $quantity){
         $item = find('item_detail',$id);
         array_push($obj->Send['Items'], array('Name' => $item['name'], 'Price' => (int)$item['price'],'Currency' => "元", 'Quantity' => (int)$quantity, 'URL' => "dedwed"));
     }
 
-    unset($_SESSION['cart']);
+    // unset($_SESSION['cart']);
     // array_push($obj->Send['Items'], array('Name' => "歐付寶黑芝麻豆漿", 'Price' => (int)"2000",
     //            'Currency' => "元", 'Quantity' => (int) "1", 'URL' => "dedwed"));
               
@@ -53,43 +58,6 @@ try {
     echo $e->getMessage();
 }
 
-
-
-
-
-
-
-
-
-
-
-
-// require __DIR__ . '../../vendor/autoload.php';
 // //綠界測試信用卡：4311-9522-2222-2222 背後安全三碼: 222
-// use Ecpay\Sdk\Factories\Factory;
-// use Ecpay\Sdk\Services\UrlService;
 
-// $factory = new Factory([
-//     'hashKey' => '5294y06JbISpM5x9',//測試用Hashkey
-//     'hashIv' => 'v77hoKGq4kWxNNIS',//測試用HashIV
-// ]);
-// $autoSubmitFormService = $factory->create('AutoSubmitFormWithCmvService');
-
-// $input = [
-//     'MerchantID' => '2000132',//測試用MerchantID
-//     'MerchantTradeNo' => 'Test' . time(), //訂單編號
-//     'MerchantTradeDate' => date('Y/m/d H:i:s'),//交易時間
-//     'PaymentType' => 'aio',//交易類型  固定填入 aio
-//     'TotalAmount' => 100,//交易金額
-//     'TradeDesc' => UrlService::ecpayUrlEncode('交易描述範例'), //交易描述
-//     'ItemName' => '範例商品一批 100 TWD x 1',
-//     'ChoosePayment' => 'Credit',//付款方式:Credit
-//     'EncryptType' => 1,//CheckMacValue加密類型，請固定填入1，使用SHA256加密
-
-//     // 請參考 example/Payment/GetCheckoutResponse.php 範例開發
-//     'ReturnURL' => 'http://localhost/online_shop/front/ecpay_callback', //付款完成通知回傳的網址
-// ];
-// $action = 'https://payment-stage.ecpay.com.tw/Cashier/AioCheckOut/V5';//服務位置
-
-// echo $autoSubmitFormService->generate($input, $action);
 ?>

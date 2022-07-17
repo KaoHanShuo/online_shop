@@ -10,23 +10,23 @@ if(!isset($_SESSION['cart'])){
     <table class="all">
         <tr>
             <td class="tt ct ct_a">登入帳號</td>
-            <td class="pp ct_a"><input type="text" name="acc" id="acc" value="<?=$member['acc']?>" readonly></td>
+            <td class="pp ct_a"><input type="text" name="acc" id="acc" value="<?=$member['acc']?>" hidden><?=$member['acc']?></td>
         </tr>
         <tr>
             <td class="tt ct ct_a">姓名</td>
-            <td class="pp ct_a"><input type="text" name="name" id="name" value="<?=$member['name']?>"></td>
+            <td class="pp ct_a"><input type="text" name="name" id="name" value="<?=$member['name']?>" hidden><?=$member['name']?></td>
         </tr>
         <tr>
             <td class="tt ct ct_a">電子信箱</td> 
-            <td class="pp ct_a"><input type="text" name="email" id="email" value="<?=$member['email']?>"></td>
+            <td class="pp ct_a"><input type="text" name="email" id="email" value="<?=$member['email']?>" hidden><?=$member['email']?></td>
         </tr>
         <tr>
             <td class="tt ct ct_a">聯絡地址</td>
-            <td class="pp ct_a"><input type="text" name="addr" id="addr" value="<?=$member['addr']?>"></td>
+            <td class="pp ct_a"><input type="text" name="addr" id="addr" value="<?=$member['addr']?>" hidden><?=$member['addr']?></td>
         </tr>
         <tr>
             <td class="tt ct ct_a">連絡電話</td>
-            <td class="pp ct_a"><input type="text" name="tel" id="tel" value="<?=$member['tel']?>"></td>
+            <td class="pp ct_a"><input type="text" name="tel" id="tel" value="<?=$member['tel']?>" hidden><?=$member['tel']?></td>
         </tr>
     </table>
     <table class="all">
@@ -59,7 +59,7 @@ if(!isset($_SESSION['cart'])){
 
     </table>
     <div class="all tt ct">
-    總價:<input type="text" name="total" id="total" value="<?=$total;?>" readonly>
+    總價:<input type="text" name="total" id="total" value="<?=$total;?>" hidden><?=$total;?>
     </div>
     <div class="ct">
         <button type="submit">確定送出</button>
@@ -67,22 +67,3 @@ if(!isset($_SESSION['cart'])){
     </div>
 
 </form>
-
-
-<script>
-    function checkout(){
-        let data={
-            total:<?=$total;?>,
-            acc:'<?=$member['acc'];?>',
-            name:$("#name").val(),
-            addr:$("#addr").val(),
-            email:$("#email").val(),
-            tel:$("#tel").val(),
-            
-        }
-        $.post("api/checkout.php",data,function(){
-            alert("訂購成功\n感謝您的選購");
-            location.href="index.php";
-        })
-    }
-</script> 

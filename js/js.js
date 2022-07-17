@@ -149,3 +149,24 @@ function editMember(){//fron/edit_member
         }
     })
 }
+
+
+/**
+ * 好像用不到
+ * front/checkout
+function checkout(){
+    let data={
+        total:<?=$total;?>,
+        acc:'<?=$member['acc'];?>',
+        name:$("#name").val(),
+        addr:$("#addr").val(),
+        email:$("#email").val(),
+        tel:$("#tel").val(),
+        
+    }
+    $.post("api/checkout.php",data,function(){
+        alert("訂購成功\n感謝您的選購");
+        location.href="index.php";
+    })
+}
+*/
