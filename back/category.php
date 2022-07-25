@@ -27,8 +27,18 @@
         <td>
             <button onclick="location.href='?do=edit_item&id=<?=$row['id'];?>'">修改</button>
             <button onclick="del('item_detail',<?=$row['id'];?>)">刪除</button>
-            <button onclick="upDown(<?=$row['id'];?>,1)">上架</button>
-            <button onclick="upDown(<?=$row['id'];?>,0)">下架</button>
+            <?php
+                if($row['sell_state']==1){
+                    echo ' <button onclick="upDown(';
+                    echo $row['id'];
+                    echo ',0)">下架</button> ';
+                    
+                }else{
+                    echo ' <button onclick="upDown(';
+                    echo $row['id'];
+                    echo ',1)">上架</button>';
+                }
+            ?>
         </td>
     </tr>
 <?php
