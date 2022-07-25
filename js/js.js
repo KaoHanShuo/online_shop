@@ -149,8 +149,6 @@ function editMember(){//fron/edit_member
         }
     })
 }
-
-
 /**
  * 好像用不到
  * front/checkout

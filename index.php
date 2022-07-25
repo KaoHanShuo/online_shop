@@ -67,7 +67,8 @@ ob_start();
 
     <nav class="navbar navbar-expand-lg navbar-light bg-danger">
         <div class="container-fluid">
-            <div class="container-xxl">
+            <div class="col-1"></div>
+            <div class="col-11">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                     <li class="nav-item">
                         <a class="nav-link text-light" aria-current="page" href="?">回首頁</a>
@@ -86,10 +87,10 @@ ob_start();
                     ?>
                 </ul>
             </div>
-            <form class="d-flex">
+            <!-- <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="" type="submit">Search</button>
-            </form>
+                <button class="" type="submit">Search</button> 
+            </form> -->
         </div>
     </nav>
 
@@ -99,7 +100,7 @@ ob_start();
         <div class="row border-top px-xl-5">
             <!-- 左邊商品欄位 -->
             <div class="col-lg-3 d-none d-lg-block">
-                <a class="btn shadow-none d-flex align-items-center justify-content-between bg-danger text-white w-100"   style="height: 65px; margin-top: -1px; padding: 0 30px;">
+                <a href="?" class="btn shadow-none d-flex align-items-center justify-content-between bg-danger text-white w-100"   style="height: 65px; margin-top: -1px; padding: 0 30px;">
                     <h6 class="m-0">全部商品(<?=rows('item_detail',['sell_state'=>1]);?>)</h6>
                     <i class="fa fa-angle-down text-dark"></i>
                 </a>

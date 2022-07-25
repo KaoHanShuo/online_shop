@@ -99,7 +99,7 @@ $rows = find('item_detail',['id'=>$_GET['id']]);//撈一筆商品資料
             <td class="tt ct ct_a">商品介紹</td>
             <td class="pp ct_a">
             <input type="text" name="introduce" id="introduce" value="<?=$rows['introduce']?>" hidden>
-            <textarea name="introuce" id="introduce" style="width:90%;height:100px"><?=$rows['introduce']?></textarea>
+            <textarea name="introduce" id="introduce" style="width:90%;height:100px"><?=$rows['introduce']?></textarea>
             </td>
         </tr>
 

@@ -56,6 +56,30 @@ function all($table,...$arg){
     //return $pdo->query($sql)->fetchAll();
 }
 
+function alllimit($table,$limit,...$arg){
+    global $pdo;
+    $sql="SELECT * FROM `$table` ";
+
+    if(isset($arg[0])){
+        if(is_array($arg[0])){
+            foreach($arg[0] as $key=>$value){
+                $tmp[]="`$key`='$value'";
+             }
+        
+            $sql=$sql."where " . implode(" AND ",$tmp);
+        }else{
+            $sql=$sql.$arg[0];
+        }
+    }
+
+    if(isset($arg[1])){
+        $sql=$sql.$arg[1];
+    }
+    $sql = $sql."LIMIT ".$limit.",3";
+    $rows=$pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+    return $rows;
+    //return $pdo->query($sql)->fetchAll();
+}
 #更新資料
 function update($table,$column,$where){
     global $pdo;
