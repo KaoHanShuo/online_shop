@@ -66,7 +66,11 @@
                     </li>
                     
                     <li class="nav-item">
-                        <?= ( in_array(1,$permit)) ? '<a id="testb" class="nav-link text-light" href="?do=category">商品分類與管理</a>' : "" ;?>
+                        <?= ( in_array(1,$permit)) ? '<a id="testb" class="nav-link text-light" href="?do=items_list">商品分類</a>' : "" ;?>
+                    </li>
+
+                    <li class="nav-item">
+                        <?= ( in_array(1,$permit)) ? '<a id="testb" class="nav-link text-light" href="?do=category">商品管理</a>' : "" ;?>
                     </li>
 
                     <li class="nav-item">

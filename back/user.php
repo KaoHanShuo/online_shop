@@ -1,5 +1,5 @@
 <!-- 會員管理 -->
-<div class="ct">會員管理</div>
+<div class="ct"><h1>會員管理</h1></div>
 <table class="all ct">
    <tr class="tt">
       <td>姓名</td>
