@@ -20,7 +20,6 @@
 </table>
 
 <div class="ct">
-    <a href="?do=reg"><button>註冊</button></a>
     <button onclick="login()">確認</button>
 </div> 
 
@@ -39,10 +38,12 @@
                if (parseInt(res)) {
                   location.href = "./back.php";//假設登入成功跳轉
                }else{
+                  location.reload();
                   alert("帳號或密碼錯誤");
                }
             })
-         } else {
+         } else { 
+            location.reload();
             alert("驗證碼輸入錯誤");
          }
       })

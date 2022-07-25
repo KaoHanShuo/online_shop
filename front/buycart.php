@@ -1,6 +1,6 @@
 <!-- 購物車介面 -->
 <?php
-if(!isset($_SESSION['user'])){
+if(!isset($_SESSION['user']) || isset($_SESSION['admin']) ){
     to("?do=login");
     exit();
 }

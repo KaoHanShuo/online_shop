@@ -1,8 +1,12 @@
 <!-- 主頁 -->
 <?php include_once "base_inc.php";
 require 'vendor/autoload.php';
-//if(!isset($_SESSION))session_start();
+if(!isset($_SESSION))session_start();
 ob_start();
+if(isset($_SESSION['admin'])){
+    unset($_SESSION['user']);
+    to("back.php");
+}
 ?>
 
 <!DOCTYPE html>

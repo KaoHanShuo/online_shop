@@ -23,7 +23,7 @@
 </table>
 
 <div class="ct">
-    <a href="?do=reg"><button>註冊</button></a>|
+    <a href="?do=reg"><button>註冊</button></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <button onclick="login()">確認</button>
 </div> 
 
@@ -48,9 +48,11 @@
                   location.href="./index.php";//假設登入成功跳轉
                 }else{
                     alert("帳號或密碼錯誤");
+                    location.reload();
                 }
             })
         }else{
+            location.reload();
             alert("驗證碼輸入錯誤");
         }
         })

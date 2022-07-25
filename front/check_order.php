@@ -1,5 +1,10 @@
 <!-- 確認訂單 -->
 <?php include_once "base_inc.php";
+    if(!isset($_SESSION))session_start();
+    if(!isset($_SESSION['user']) || isset($_SESSION['admin'])){  
+        to("?");
+        exit();
+    }
     $member = find('user',['acc'=>$_SESSION['user']]);
     $items = all('item_order',['acc'=>$member['acc']]) 
 ?>
