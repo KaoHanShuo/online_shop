@@ -41,7 +41,7 @@ $row=find('user',$_GET['id']);
         </tr>
     </table>
     <div class="ct">
-        <button type="submit">編輯</button>
+        <button type="submit" onclick="modifySuccess()">編輯</button>
         <button type="reset">重製</button>
         <button onclick="location.href='?do=user'">取消</button>
     </div>

@@ -149,6 +149,11 @@ function editMember(){//fron/edit_member
         }
     })
 }
+
+function modifySuccess(){
+    alert("修改完成");
+}
+
 /**
  * 好像用不到
  * front/checkout

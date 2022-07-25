@@ -8,7 +8,7 @@ if($row['permit']){
 ?>
 
 <h1 class="ct ">修改管理帳號</h1>
-<form action="api/save_admin.php" method="post">
+<form action="api/update_admin.php" method="post">
     <table class="all">
         <tr>
             <td class="tt ct ct_a">帳號</td>
@@ -46,6 +46,6 @@ if($row['permit']){
         </tr>
     </table>
     <div class="ct">
-        <input type="submit" value="修改">
+        <input type="submit" value="修改" onclick="modifySuccess()">
     </div>
 </form>

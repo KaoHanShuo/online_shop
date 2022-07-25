@@ -105,7 +105,9 @@ $rows = find('item_detail',['id'=>$_GET['id']]);//撈一筆商品資料
 
     </table>
     <div class="ct">
-    <button type="submit">修改</button> | 
+    <button type="submit" onclick="modifySuccess()">修改</button> | 
         <button type="button" onclick="location.href='?do=category'">返回</button>
     </div>
 </form>
+
+

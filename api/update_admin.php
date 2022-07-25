@@ -7,10 +7,8 @@ if($_POST['permit']){//有權限才序列化
     $_POST['permit'] = serialize($_POST['permit']);
 }
 
-$acc = rows('admin',['acc'=>$_POST['acc']]);//有沒有該一筆帳號
-$id = find('admin',$_POST['id']);//有沒有該帳號
-if(empty($acc)){ //如果帳號不重複
-    insert('admin',$_POST);
-}
+update('admin',$_POST,['id'=>$_POST['id']]);
+
+
 to("../back.php?do=admin");
 ?>
