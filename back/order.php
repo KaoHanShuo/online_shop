@@ -21,6 +21,7 @@
       <td><?=$row['acc'];?></td>
       <td><?=$row['date'];?></td>
       <td>
+      <button onclick="location.href='?do=items_detail&id=<?=$row['id'];?>'">查看</button>
       <button onclick="del('item_order',<?=$row['id'];?>)">刪除</button>
       </td>
    </tr>

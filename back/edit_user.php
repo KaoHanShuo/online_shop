@@ -1,6 +1,6 @@
 <!-- 後台編輯會員資料 -->
 <?php
-$row=find('user',$_GET['id']);
+$row=find('user',$_GET['userid']);
 ?>
 
 <h1 class="ct">編輯會員資料</h1>
@@ -41,8 +41,8 @@ $row=find('user',$_GET['id']);
         </tr>
     </table>
     <div class="ct">
-        <button type="submit" onclick="modifySuccess()">編輯</button>
-        <button type="reset">重製</button>
+        <button type="submit" onclick="modifySuccess()">編輯</button>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <button type="button" onclick="location.href='?do=look_user_items&userid=<?=$row['id'];?>&acc=<?=$row['acc'];?>'">查看購買歷史紀錄</button>&nbsp;&nbsp;|&nbsp;&nbsp;
         <button onclick="location.href='?do=user'">取消</button>
     </div>
 </form>
