@@ -96,32 +96,49 @@ function lookAcc(){
     //$("#valid_name").html("<p>*124</p>");
     let acc = $("#acc").val();
     let word = RegExp("least");
-    $.post("./api/valid.php",{'acc':acc},function(res){
-        if(word.test(res)){
-            $("#valid_acc").html("*至少六個字母");
-        }else{
-            $("#valid_acc").html(res);
-        }
-    })
+    let word2 = RegExp("[A-Za-z0-9_]+");
+    if(!(word2.test(acc))){
+        $("#valid_acc").html("*只能有數字英文");
+    }else{
+        $.post("./api/valid.php",{'acc':acc},function(res){
+            if(word.test(res)){
+                $("#valid_acc").html("*至少六個字母");
+            }else{
+                $("#valid_acc").html(res);
+            }
+        })
+    }
     //console.log(test);
 }
 function lookPw(){
     let pw = $("#pw").val();
     let word = RegExp("least");
-    $.post("./api/valid.php",{'pw':pw},function(res){
-        if(word.test(res)){
-            $("#valid_pw").html("*至少六個字母");
-        }else{
-            $("#valid_pw").html(res);
-        }
-    })
+    let word2 = RegExp("[A-Za-z0-9]+");
+    if(!(word2.test(pw))){
+        $("#valid_pw").html("*只能有數字英文");
+    }else{
+        $.post("./api/valid.php",{'pw':pw},function(res){
+            if(word.test(res)){
+                $("#valid_pw").html("*至少六個字母");
+            }else{
+                $("#valid_pw").html("");
+            }
+        }) 
+    }
+    
+    
 }
 function lookTel(){
     let tel = $("#tel").val();
     let word = RegExp("least");
-    $.post("./api/valid.php",{'tel':tel},function(res){
-        $("#valid_tel").html(res);
-    })
+    let word2 = RegExp("[0-9]{10}");
+    if(!(word2.test(tel))){
+        $("#valid_tel").html("*必須為十碼正規電話");
+    }else{
+        $.post("./api/valid.php",{'tel':tel},function(res){
+            $("#valid_tel").html(res);
+        })
+    }
 }
 function lookAddr(){
     let addr = $("#addr").val();
@@ -132,9 +149,13 @@ function lookAddr(){
 }
 function lookEmail(){
     let email = $("#email").val();
-    let word = RegExp("least");
+    let word = RegExp("Email");
     $.post("./api/valid.php",{'email':email},function(res){
-        $("#valid_email").html(res);
+        if(word.test(res)){
+            $("#valid_email").html("*必須為正規電子信箱");
+        }else{
+            $("#valid_email").html(res);
+        }
     })
 }
 

@@ -47,11 +47,14 @@
     // 檢測帳號
     function checkAcc(){
         $.post("./api/check_acc.php",{acc:$("#acc").val()},function(check){ //  ./api/check_acc.php
-            if(parseInt(check) || $("#acc").val()=='admin'){ //if(check>0)
-                alert("帳號已存在");
-            }else{
-                alert("此帳號沒有重複");
-            }
+            if(($("#valid_acc").text()).length < 6 ){
+                if(parseInt(check) || $("#acc").val()=='admin'){ //if(check>0)
+                    alert("帳號已存在");
+                }else{
+                    alert("此帳號沒有重複");
+                }
+            }else
+                alert("此帳號太短或含有錯誤字元");
         })
     }
     //註冊帳號
