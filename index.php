@@ -43,6 +43,7 @@ if(isset($_SESSION['admin'])){
                     echo '<a class="text-dark px-2" href="?do=edit_member"><i class="bi bi-person-fill">會員';
                     echo $_SESSION['user'];
                     echo '</i></a>';
+                    echo '<a class="text-dark px-2" href="?do=logout"><i class="bi bi-person-fill">登出</i></a>';
                 }else{
                     echo '<a class="text-dark px-2" href="?do=login"><i class="bi bi-person-fill">會員登入</i></a>';
                 }
@@ -86,7 +87,6 @@ if(isset($_SESSION['admin'])){
                     <?php
                     if(isset($_SESSION['user'])){
                         echo '<li class="nav-item"><a class="nav-link text-light" href="?do=check_order">查詢訂單</a></li>';
-                        echo '<li class="nav-item"><a class="nav-link text-light" href="?do=logout">登出</a></li>';
                     }
                     ?>
                 </ul>
@@ -164,9 +164,7 @@ if(isset($_SESSION['admin'])){
             <div class="col-lg-2"></div>
             <div class="col-lg-8 col-md-12 mb-5 pr-3 pr-xl-5 text-center">
                 <a class="text-dark" href="#top">返回頂部</a>
-                <p class="mb-2 pt-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>地址</p>
-                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>郵件</p>
-                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>聯絡電話</p>
+               
             </div>
             <div class="col-lg-2"></div>
         </div>
@@ -175,7 +173,7 @@ if(isset($_SESSION['admin'])){
             <div class="col-lg-8">
                 <p class="mb-md-0 text-center  text-dark">
                     <a class="text-dark font-weight-semi-bold" href="#">
-                    <a class="text-dark font-weight-semi-bold" href="">版權所有</a><br>
+                    <a class="text-dark font-weight-semi-bold" href="">© KaoHanShuo 版權所有 </a><br>
                 </p>
             </div>
             <div class="col-lg-2"></div>

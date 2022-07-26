@@ -38,4 +38,7 @@
   </tr>
 </table>
 
+
 </div>
+
+<div class="ct"><button type="button" onclick="location.href='?'">返回</button></div>

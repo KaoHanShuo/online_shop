@@ -4,6 +4,7 @@
         to("index.php");
         exit();
     }
+    
     $admin = find('admin',['acc'=>$_SESSION['admin']]);
     $permit = unserialize($admin['permit']);
 ?>
@@ -41,9 +42,12 @@
     <div class="container-fluid">
         <div class="row py-2 px-lg-5">
             <div class="col d-flex justify-content-end px-lg-5 gy-1">
-                <a class="text-dark px-2" href="?do=admin">
-                    <i class=" bi bi bi-person-workspace">管理員</i>
+                <a class="text-dark px-2" href="">
+                    <i class=" bi bi bi-person-workspace">管理員<?=$admin['acc'];?></i>
                 </a>
+                <a class="text-dark px-2" href="?do=logout">
+                    <i class=" bi bi bi-person-workspace">登出</i>
+                </a>       
             </div>
         </div>
     </div>
@@ -84,10 +88,6 @@
                     <li class="nav-item">
                         <?= ( in_array(4,$permit)) ? '<a id="testb" class="nav-link text-light" href="?do=news">最新消息管理</a>' : "" ;?>
                     </li>
-                   
-                    <li class="nav-item">
-                        <a id="testb" class="nav-link  text-light" href="?do=logout">登出</a>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -127,9 +127,6 @@
             <div class="col-lg-2"></div>
             <div class="col-lg-8 col-md-12 mb-5 pr-3 pr-xl-5 text-center">
                 <a class="text-dark" href="#top">返回頂部</a>
-                <p class="mb-2 pt-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>地址</p>
-                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>郵件</p>
-                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>聯絡電話</p>
             </div>
             <div class="col-lg-2"></div>
         </div>
@@ -138,7 +135,7 @@
             <div class="col-lg-8">
                 <p class="mb-md-0 text-center  text-dark">
                     <a class="text-dark font-weight-semi-bold" href="#">
-                    <a class="text-dark font-weight-semi-bold" href="">版權所有</a><br>
+                    <a class="text-dark font-weight-semi-bold" href="">© KaoHanShuo 版權所有 </a><br>
                 </p>
             </div>
             <div class="col-lg-2"></div>
