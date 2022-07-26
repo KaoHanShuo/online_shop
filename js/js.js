@@ -1,9 +1,15 @@
 //刪除
 function del(table,id){
-	$.post("api/delete_admin.php",{table,id},function(){ 
-		location.reload();
-	})
+    var check = confirm("確定要刪除嗎");
+    if(check){
+        $.post("api/delete_admin.php",{table,id},function(){ 
+            location.reload();
+        })
+    }else{
+        location.reload();
+    }
 } 
+
 //新增分類
 function addCate(type){
     let primary,parent,secondary;

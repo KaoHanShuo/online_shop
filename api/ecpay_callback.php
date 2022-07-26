@@ -26,7 +26,8 @@
         echo '1|OK';
         to("http://localhost/online_shop");
     }
-
+    unset($_SESSION['cart']);
+    to("http://localhost/online_shop");
     /**
      * 
      * 回傳$_POST參數

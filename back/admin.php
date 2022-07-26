@@ -26,8 +26,8 @@
                 }else{
             ?>
 
-            <button onclick="location.href='?do=edit_admin&id=<?=$row['id'];?>'">edit</button>
-            <button onclick="del('admin',<?=$row['id'];?>)">delete</button>
+            <button onclick="location.href='?do=edit_admin&id=<?=$row['id'];?>'">編輯</button>
+            <button onclick="del('admin',<?=$row['id'];?>)">刪除</button>
 
             <?php    
                 }

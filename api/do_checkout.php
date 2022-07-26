@@ -4,9 +4,13 @@ include_once "../Library/ECPay.Payment.Integration.php";
 
 //$LOL=new ECPay_AllInOne();
 
-// $_POST['number'] = date("YmdHi").rand(1,99);
-// $_POST['items'] = serialize($_SESSION['cart']);
-// insert('item_order',$_POST);
+
+//因為本地端無法刷綠界，模擬用
+$_POST['number'] = date("YmdHi").rand(1,99);
+$_POST['items'] = serialize($_SESSION['cart']);
+insert('item_order',$_POST);
+//
+
 $_POST['number'] = date("YmdHi").rand(1,99);
 
 try {
@@ -20,9 +24,13 @@ try {
     $obj->MerchantID  = '2000132';                                                     //測試用MerchantID，請自行帶入ECPay提供的MerchantID
     $obj->EncryptType = '1';                                                           //CheckMacValue加密類型，請固定填入1，使用SHA256加密
 
-
+    
     //基本參數(請依系統規劃自行調整)
     $MerchantTradeNo = $_POST['number'] ;
+
+    //本地網址要換成"http://localhost/online_shop/api/ecpay_callback.php"
+    //線上"http://localhost/online_shop/api/ecpay_callback.php"
+    
     $obj->Send['ReturnURL']         = "http://localhost/online_shop/api/ecpay_callback.php" ;    //付款完成通知回傳的網址
     //$obj->Send['ClientRedirectURL'] = "http://localhost/online_shop";
     //$obj->Send['ClientBackURL']     = "http://localhost/online_shop" ;
